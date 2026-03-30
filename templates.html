@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Templates & Réalisations — LocalWeb Pro</title>
+<meta name="description" content="Découvrez nos réalisations web pour artisans, freelances, coachs et commerces locaux. Mockups, résultats mesurables et exemples concrets."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0B0B0E;--bg2:#111116;--bg3:#16161D;--card:#1C1C26;--card2:#20202C;
+  --nav-bg:rgba(11,11,14,0.88);
+  --accent:#C9F542;--accent2:#a8d934;
+  --accent-dim:rgba(201,245,66,0.12);--accent-dim2:rgba(201,245,66,0.06);
+  --text:#F0EDE8;--muted:#7A7A8E;--muted2:#56566A;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --success:#4DF0A0;--danger:#F04D6A;
+  --r:14px;--r2:22px;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#F5F3EF;--bg2:#EDEAE4;--bg3:#E8E4DC;--card:#FFFFFF;--card2:#F8F6F2;
+  --nav-bg:rgba(245,243,239,0.92);
+  --accent:#5A9600;--accent2:#4A7D00;
+  --accent-dim:rgba(90,150,0,0.1);--accent-dim2:rgba(90,150,0,0.05);
+  --text:#14140F;--muted:#6B6B5E;--muted2:#9A9A8A;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0;position:relative}
+.heading{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.15;letter-spacing:-0.02em}
+.heading em{font-style:italic;color:var(--accent)}
+.label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+.sub{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:540px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:100px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.04em;transition:all 0.22s ease;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#0B0B0E}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,245,66,0.28)}
+.btn-ghost{border:1.5px solid var(--border2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-lg{padding:19px 38px;font-size:0.95rem}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}.d5{transition-delay:0.40s}.d6{transition-delay:0.48s}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;transition:box-shadow 0.3s}
+#nav.scrolled{box-shadow:0 2px 30px rgba(0,0,0,0.6)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);letter-spacing:-0.01em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-pill{display:flex;background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:3px}
+.theme-pill button{width:28px;height:28px;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:0.88rem;transition:background 0.2s;color:var(--muted)}
+.theme-pill button.active{background:var(--accent);color:#0B0B0E}
+.nav-ham{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-ham span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.nav-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0}
+.nav-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;background:var(--bg);border-top:1px solid var(--border);padding:12px 24px 20px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{padding:12px 0;font-size:0.95rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color 0.2s}
+.nav-mobile a:last-child{border:none;color:var(--accent);font-weight:600}
+@media(max-width:700px){.nav-links{display:none}.nav-ham{display:flex}}
+
+/* BOTTOM NAV */
+#bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:95;background:var(--nav-bg);border-top:1px solid var(--border);padding:6px 0 calc(6px + env(safe-area-inset-bottom));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 6px;color:var(--muted);font-size:0.6rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;text-decoration:none}
+.bnav-item.active{color:var(--accent)}
+.bnav-icon{font-size:1.3rem;line-height:1.2;display:block}
+@media(max-width:768px){#bottom-nav{display:flex}body{padding-bottom:68px}}
+
+/* FOOTER */
+footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
+.footer-grid{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:20px}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:4px}
+.footer-logo span{color:var(--accent)}
+.footer-copy{font-size:0.8rem;color:var(--muted2)}
+.footer-trust-row{display:flex;gap:10px;align-items:center}
+.footer-badge{display:flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);padding:6px 12px;border-radius:100px}
+.footer-links{display:flex;gap:20px;align-items:center}
+.footer-links a{font-size:0.8rem;color:var(--muted2);transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;text-align:center}.footer-trust-row,.footer-links{justify-content:center}}
+
+/* ============================
+   HERO
+============================ */
+#hero{padding:90px 0 80px;background:var(--bg2);position:relative;overflow:hidden}
+.hero-blob{position:absolute;top:-160px;right:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,245,66,0.07) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:700px}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:32px}
+.hero-stat{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--muted)}
+.hero-stat strong{font-family:'Syne',sans-serif;font-size:1.1rem;color:var(--accent);font-weight:800}
+
+/* ============================
+   FILTER BAR
+============================ */
+#portfolio{background:var(--bg)}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.filter-btn{padding:8px 18px;border-radius:100px;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.06em;background:var(--card);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all 0.2s}
+.filter-btn:hover{border-color:var(--border2);color:var(--text)}
+.filter-btn.active{background:var(--accent-dim);border-color:rgba(201,245,66,0.4);color:var(--accent)}
+
+/* ============================
+   RÉALISATIONS GRID
+============================ */
+.real-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.real-card{
+  border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);
+  position:relative;cursor:pointer;background:var(--card);
+  transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;
+}
+.real-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 24px 60px rgba(0,0,0,0.6);border-color:rgba(201,245,66,0.3)}
+.real-card[data-hidden="true"]{display:none}
+
+/* Browser mockup inside cards */
+.real-browser{background:var(--card2);padding:12px 12px 0}
+.real-bar{height:28px;display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.real-dots{display:flex;gap:4px}
+.real-dots span{width:8px;height:8px;border-radius:50%}
+.real-url{flex:1;height:18px;background:var(--bg3);border-radius:4px;display:flex;align-items:center;padding:0 8px;font-size:0.6rem;color:var(--muted);font-family:'Syne',sans-serif}
+.real-screen{height:140px;border-radius:8px 8px 0 0;overflow:hidden;position:relative;display:flex;flex-direction:column;gap:6px;padding:12px}
+.real-screen-hero{height:36px;border-radius:4px;margin-bottom:4px}
+.real-screen-line{height:6px;border-radius:3px;background:rgba(255,255,255,0.12)}
+.real-screen-line.w80{width:80%}.real-screen-line.w60{width:60%}.real-screen-line.w45{width:45%}
+.real-screen-btn{height:22px;width:80px;border-radius:100px;margin-top:4px}
+.real-screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:4px}
+.real-screen-box{height:28px;border-radius:4px;opacity:0.5}
+
+.real-info{padding:20px}
+.real-sector{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+.real-name{font-family:'Instrument Serif',serif;font-size:1.2rem;margin-bottom:6px}
+.real-desc{font-size:0.82rem;color:var(--muted);margin-bottom:10px;line-height:1.5}
+.real-kpi{font-size:0.82rem;color:var(--muted)}
+.real-kpi strong{color:var(--success)}
+.real-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.real-tag{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;padding:3px 9px;border-radius:100px;background:var(--accent-dim);color:var(--accent);letter-spacing:0.06em}
+
+.real-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,14,0.95) 0%,transparent 50%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:20px}
+.real-card:hover .real-overlay{opacity:1}
+.real-overlay-text{color:var(--accent);font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;display:flex;align-items:center;gap:6px}
+
+@media(max-width:900px){.real-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.real-grid{grid-template-columns:1fr}}
+
+/* ============================
+   STATS BANNER
+============================ */
+#stats{background:var(--accent);padding:72px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.stat-item{padding:16px 20px;position:relative}
+.stat-item + .stat-item::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(11,11,14,0.15)}
+.stat-val{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,5vw,4rem);color:#0B0B0E;line-height:1;margin-bottom:6px}
+.stat-lbl{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:rgba(11,11,14,0.6)}
+@media(max-width:640px){.stats-grid{grid-template-columns:1fr 1fr}.stat-item + .stat-item::before{top:0;left:20%;height:1px;width:60%}}
+
+/* ============================
+   SECTEURS
+============================ */
+#secteurs{background:var(--bg2)}
+.sect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+.sect-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 22px;text-align:center;transition:all 0.25s ease;position:relative;overflow:hidden}
+.sect-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.25s}
+.sect-card:hover{border-color:rgba(201,245,66,0.3);transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+.sect-card:hover::after{transform:scaleX(1)}
+.sect-emoji{font-size:2.2rem;margin-bottom:16px;display:block}
+.sect-name{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:8px}
+.sect-desc{font-size:0.82rem;color:var(--muted);line-height:1.5}
+@media(max-width:768px){.sect-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.sect-grid{grid-template-columns:1fr}}
+
+/* ============================
+   CTA FINAL
+============================ */
+#cta{background:var(--bg);padding:100px 0;text-align:center}
+.cta-inner{max-width:640px;margin:0 auto}
+.cta-title{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3.2rem);margin-bottom:14px;line-height:1.15}
+.cta-title em{font-style:italic;color:var(--accent)}
+.cta-sub{font-size:1.05rem;color:var(--muted);margin-bottom:36px;line-height:1.7}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Local<span>Web</span> Pro</a>
+    <ul class="nav-links">
+      <li><a href="kit-gratuit.html">Kit Gratuit</a></li>
+      <li><a href="templates.html" class="active">Templates</a></li>
+      <li><a href="kit-premium.html">Kit Premium</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-pill">
+        <button id="btnDark" class="active" title="Thème sombre">🌙</button>
+        <button id="btnLight" title="Thème clair">☀️</button>
+      </div>
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <button class="nav-ham" id="navHam" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMob">
+    <a href="kit-gratuit.html">Kit Gratuit</a>
+    <a href="templates.html">Templates</a>
+    <a href="kit-premium.html">Kit Premium</a>
+    <a href="contact.html">Contact</a>
+    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="container">
+    <div class="hero-inner fade-in">
+      <span class="label">Réalisations & Templates</span>
+      <h1 class="heading" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+        Des sites qui<br/><em>travaillent pour vous.</em>
+      </h1>
+      <p class="sub" style="margin-top:18px">
+        Chaque réalisation ci-dessous a été livrée en 7 jours et a généré des résultats mesurables pour son propriétaire. Votre secteur y est probablement.
+      </p>
+      <div class="hero-stats fade-in d1">
+        <div class="hero-stat"><strong>+15</strong> projets livrés</div>
+        <div class="hero-stat"><strong>7</strong> jours livraison</div>
+        <div class="hero-stat"><strong>100%</strong> satisfaction</div>
+        <div class="hero-stat"><strong>+3x</strong> clients en moyenne</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="container">
+
+    <!-- Filter -->
+    <div class="filter-bar fade-in">
+      <button class="filter-btn active" data-filter="all">Tout voir</button>
+      <button class="filter-btn" data-filter="artisan">Artisans</button>
+      <button class="filter-btn" data-filter="freelance">Freelances</button>
+      <button class="filter-btn" data-filter="coach">Coachs</button>
+      <button class="filter-btn" data-filter="restauration">Restauration</button>
+      <button class="filter-btn" data-filter="commerce">Commerce</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="real-grid">
+
+      <!-- 1 — Plombier -->
+      <div class="real-card fade-in d1" data-category="artisan">
+        <div class="real-browser">
+          <div class="real-bar">
+            <div class="real-dots"><span style="background:#F04D6A"></span><span style="background:#F0B84D"></span><span style="background:#4DF0A0"></span></div>
+            <div class="real-url">🔒 plomberie-dupont.fr</div>
+          </div>
+          <div class="real-screen" style="background:linear-gradient(135deg,#1C1C26,#2a2a38)">
+            <div class="real-screen-hero" style="background:#C9F542;opacity:0.9"></div>
+            <div class="real-screen-line w60"></div>
+            <div class="real-screen-line w45"></div>
+            <div class="real-screen-btn" style="background:#C9F542"></div>
+            <div class="real-screen-grid">
+              <div class="real-screen-box" style="background:#C9F542"></div>
+              <div class="real-screen-box" style="background:#2a2a38;opacity:1"></div>
+            </div>
+          </div>
+        </div>
+        <div class="real-info">
+          <div class="real-sector">Artisan — Plomberie</div>
+          <div class="real-name">Plomberie Dupont</div>
+          <div class="real-desc">Site vitrine local avec bouton d'appel direct, zone d'intervention et formulaire devis.</div>
+          <div class="real-kpi">Résultat : <strong>+14 appels/semaine</strong></div>
+          <div class="real-tags"><span class="real-tag">SEO Local</span><span class="real-tag">Mobile</span><span class="real-tag">Click-to-call</span></div>
+        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Commander ce style →</div></div>
+      </div>
+
+      <!-- 2 — Coach -->
+      <div class="real-card fade-in d2" data-category="coach">
+        <div class="real-browser">
+          <div class="real-bar">
+            <div class="real-dots"><span style="background:#F04D6A"></span><span style="background:#F0B84D"></span><span style="background:#4DF0A0"></span></div>
+            <div class="real-url">🔒 claracoaching.fr</div>
+          </div>
+          <div class="real-screen" style="background:linear-gradient(135deg,#0d1f16,#1a3826)">
+            <div class="real-screen-hero" style="background:#4DF0A0;opacity:0.85"></div>
+            <div class="real-screen-line w80"></div>
+            <div class="real-screen-line w60"></div>
+            <div class="real-screen-btn" style="background:#4DF0A0"></div>
+            <div class="real-screen-grid">
+              <div class="real-screen-box" style="background:#4DF0A0;opacity:0.3"></div>
+              <div class="real-screen-box" style="background:#4DF0A0;opacity:0.2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="real-info">
+          <div class="real-sector">Coach — Bien-être</div>
+          <div class="real-name">Clara Coaching</div>
+          <div class="real-desc">Page de vente élégante avec témoignages, calendrier de réservation et FAQ.</div>
+          <div class="real-kpi">Résultat : <strong>+8 demandes/mois</strong></div>
+          <div class="real-tags"><span class="real-tag">Réservation</span><span class="real-tag">Témoignages</span><span class="real-tag">FAQ</span></div>
+        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Commander ce style →</div></div>
+      </div>
+
+      <!-- 3 — Restaurant -->
+      <div class="real-card fade-in d3" data-category="restauration">
+        <div class="real-browser">
+          <div class="real-bar">
+            <div class="real-dots"><span style="background:#F04D6A"></span><span style="background:#F0B84D"></span><span style="background:#4DF0A0"></span></div>
+            <div class="real-url">🔒 pizzeria-napoli-nice.fr</div>
+          </div>
+          <div class="real-screen" style="background:linear-gradient(135deg,#1f1810,#2e2212)">
+            <div class="real-screen-hero" style="background:#F0B84D;opacity:0.85"></div>
+            <div class="real-screen-line w80"></div>
+            <div class="real-screen-line w60"></div>
+            <div class="real-screen-btn" style="background:#F0B84D"></div>
+            <div class="real-screen-grid">
+              <div class="real-screen-box" style="background:#F0B84D;opacity:0.3"></div>
+              <div class="real-screen-box" style="background:#F0B84D;opacity:0.2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="real-info">
+          <div class="real-sector">Restauration — Local</div>
+          <div class="real-name">Pizzeria Napoli</div>
+          <div class="real-desc">Menu en ligne, réservation directe, Google Maps intégré et avis clients.</div>
+          <div class="real-kpi">Résultat : <strong>+60% réservations</strong></div>
+          <div class="real-tags"><span class="real-tag">Menu</span><span class="real-tag">Réservation</span><span class="real-tag">Maps</span></div>
+        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Commander ce style →</div></div>
+      </div>
+
+      <!-- 4 — Électricien -->
+      <div class="real-card fade-in d1" data-category="artisan">
+        <div class="real-browser">
+          <div class="real-bar">
+            <div class="real-dots"><span style="background:#F04D6A"></span><span style="background:#F0B84D"></span><span style="background:#4DF0A0"></span></div>
+            <div class="real-url">🔒 electricite-moreau.fr</div>
+          </div>
+          <div class="real-screen" style="background:linear-gradient(135deg,#121220,#1e1e32)">
+            <div class="real-screen-hero" style="background:#818cf8;opacity:0.85"></div>
+            <div class="real-screen-line w80"></div>
+            <div class="real-screen-line w55"></div>
+            <div class="real-screen-btn" style="background:#818cf8"></div>
+            <div class="real-screen-grid">
+              <div class="real-screen-box" style="background:#818cf8;opacity:0.3"></div>
+              <div class="real-screen-box" style="background:#818cf8;opacity:0.2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="real-info">
+          <div class="real-sector">Artisan — Électricité</div>
+          <div class="real-name">Électricité Moreau</div>
+          <div class="real-desc">Site vitrine avec galerie travaux, zone couverte et devis en ligne automatisé.</div>
+          <div class="real-kpi">Résultat : <strong>+11 devis/mois</strong></div>
+          <div class="real-tags"><span class="real-tag">Galerie</span><span class="real-tag">Devis</span><span class="real-tag">Zone</span></div>
+        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Commander ce style →</div></div>
+      </div>
+
+      <!-- 5 — Graphiste -->
+      <div class="real-card fade-in d2" data-category="freelance">
+        <div class="real-browser">
+          <div class="real-bar">
+            <div class="real-dots"><span style="background:#F04D6A"></span><span style="background:#F0B84D"></span><span style="background:#4DF0A0"></span></div>
+            <div class="real-url">🔒 studio-art-lea.fr</div>
+          </div>
+          <div class="real-screen" style="background:linear-gradient(135deg,#1a0a1e,#2d1436)">
+            <div class="real-screen-hero" style="background:#e879f9;opacity:0.85"></div>
+            <div class="real-screen-line w60"></div>
+            <div class="real-screen-line w80"></div>
+            <div class="real-screen-btn" style="background:#e879f9"></div>
+            <div class="real-screen-grid">
+              <div class="real-screen-box" style="background:#e879f9;opacity:0.3"></div>
+              <div class="real-screen-box" style="background:#e879f9;opacity:0.2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="real-info">
+          <div class="real-sector">Freelance — Graphisme</div>
+          <div class="real-name">Studio Art Léa</div>
+          <div class="real-desc">Portfolio créatif avec galerie animée, tarifs clairs et formulaire de contact projet.</div>
+          <div class="real-kpi">Résultat : <strong>+5 clients/mois</strong></div>
+          <div class="real-tags"><span class="real-tag">Portfolio</span><span class="real-tag">Galerie</span><span class="real-tag">Tarifs</span></div>
+        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Commander ce style →</div></div>
+      </div>
+
+      <!-- 6 — Commerce -->
+      <div class="real-card fade-in d3" data-category="commerce">
+        <div class="real-browser">
+          <div class="real-bar">
+            <div class="real-dots"><span style="background:#F04D6A"></span><span style="background:#F0B84D"></span><span style="background:#4DF0A0"></span></div>
+            <div class="real-url">🔒 jardins-bernard.fr</div>
+          </div>
+          <div class="real-screen" style="background:linear-gradient(135deg,#0d1f0a,#1a3810)">
+            <div class="real-screen-hero" style="background:#86efac;opacity:0.85"></div>
+            <div class="real-screen-line w70"></div>
+            <div class="real-screen-line w50"></div>
+            <div class="real-screen-btn" style="background:#86efac"></div>
+            <div class="real-screen-grid">
+              <div class="real-screen-box" style="background:#86efac;opacity:0.3"></div>
+              <div class="real-screen-box" style="background:#86efac;opacity:0.2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="real-info">
+          <div class="real-sector">Commerce — Paysagisme</div>
+          <div class="real-name">Jardins Bernard</div>
+          <div class="real-desc">Vitrine locale avec galerie avant/après, témoignages et demande de devis rapide.</div>
+          <div class="real-kpi">Résultat : <strong>+9 devis/semaine</strong></div>
+          <div class="real-tags"><span class="real-tag">Avant/Après</span><span class="real-tag">Galerie</span><span class="real-tag">Devis</span></div>
+        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Commander ce style →</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <div class="stat-val">+15</div>
+        <div class="stat-lbl">projets livrés</div>
+      </div>
+      <div class="stat-item fade-in d1">
+        <div class="stat-val">7j</div>
+        <div class="stat-lbl">délai garanti</div>
+      </div>
+      <div class="stat-item fade-in d2">
+        <div class="stat-val">+3x</div>
+        <div class="stat-lbl">clients en moyenne</div>
+      </div>
+      <div class="stat-item fade-in d3">
+        <div class="stat-val">100%</div>
+        <div class="stat-lbl">satisfait ou remboursé</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS -->
+<section id="secteurs" class="section">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto" class="fade-in">
+      <span class="label">Votre secteur</span>
+      <h2 class="heading">Un site adapté<br/>à <em>votre métier.</em></h2>
+      <p class="sub" style="margin:14px auto 0;text-align:center">Je crée des sites pour tous les professionnels locaux. Chaque secteur a ses codes — je les maîtrise.</p>
+    </div>
+    <div class="sect-grid">
+      <div class="sect-card fade-in d1">
+        <span class="sect-emoji">🔧</span>
+        <div class="sect-name">Artisans</div>
+        <div class="sect-desc">Plombiers, électriciens, peintres, carreleurs — sites optimisés pour les urgences locales.</div>
+      </div>
+      <div class="sect-card fade-in d2">
+        <span class="sect-emoji">💻</span>
+        <div class="sect-name">Freelances</div>
+        <div class="sect-desc">Développeurs, graphistes, consultants — portfolios et pages de vente qui convertissent.</div>
+      </div>
+      <div class="sect-card fade-in d3">
+        <span class="sect-emoji">🎯</span>
+        <div class="sect-name">Coachs</div>
+        <div class="sect-desc">Life coaches, kinés, naturopathes — pages de confiance avec réservation intégrée.</div>
+      </div>
+      <div class="sect-card fade-in d4">
+        <span class="sect-emoji">🍕</span>
+        <div class="sect-name">Restauration</div>
+        <div class="sect-desc">Restaurants, traiteurs, food trucks — menus, réservations et avis Google intégrés.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner fade-in">
+      <span class="label" style="display:block;text-align:center">Votre tour</span>
+      <h2 class="cta-title">
+        Votre site pourrait être<br/><em>le prochain ici.</em>
+      </h2>
+      <p class="cta-sub">
+        Livré en 7 jours. Design sur-mesure. Optimisé pour générer des clients dans votre région.
+      </p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap" class="fade-in d1">
+        <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-lg">
+          Démarrer mon projet →
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="kit-premium.html" class="btn btn-ghost">Voir l'offre détaillée</a>
+      </div>
+      <p style="margin-top:20px;font-size:0.82rem;color:var(--muted)">
+        Questions ? <a href="contact.html" style="color:var(--accent)">Contactez-moi</a> — réponse sous 24h.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Local<span>Web</span> Pro</div>
+        <div class="footer-copy">© 2025 LocalWeb Pro — Tous droits réservés</div>
+      </div>
+      <div class="footer-trust-row">
+        <div class="footer-badge">🔒 Site sécurisé</div>
+        <div class="footer-badge">🇫🇷 Fait en France</div>
+      </div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Accueil</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTTOM NAV MOBILE -->
+<nav id="bottom-nav" aria-label="Navigation principale">
+  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span>Accueil</span></a>
+  <a href="kit-gratuit.html" class="bnav-item"><span class="bnav-icon">🎁</span><span>Gratuit</span></a>
+  <a href="kit-premium.html" class="bnav-item"><span class="bnav-icon">⭐</span><span>Premium</span></a>
+  <a href="templates.html" class="bnav-item active"><span class="bnav-icon">🎨</span><span>Templates</span></a>
+  <a href="contact.html" class="bnav-item"><span class="bnav-icon">✉️</span><span>Contact</span></a>
+</nav>
+
+<script>
+(function(){
+  const h=document.documentElement;
+  const d=document.getElementById('btnDark');
+  const l=document.getElementById('btnLight');
+  const apply=t=>{t==='light'?h.setAttribute('data-theme','light'):h.removeAttribute('data-theme');d.classList.toggle('active',t!=='light');l.classList.toggle('active',t==='light');localStorage.setItem('lwp-t',t)};
+  apply(localStorage.getItem('lwp-t')||'dark');
+  d.onclick=()=>apply('dark');l.onclick=()=>apply('light');
+})();
+const ham=document.getElementById('navHam'),mob=document.getElementById('navMob');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o)});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');ham.classList.remove('open')}));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20),{passive:true});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+/* FILTER */
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.real-card').forEach(card=>{
+      const show=f==='all'||card.dataset.category===f;
+      card.dataset.hidden=show?'false':'true';
+      card.style.display=show?'':'none';
+      if(show){card.classList.remove('visible');setTimeout(()=>card.classList.add('visible'),50)}
+    });
+  });
+});
+
+/* CTA overlay → mailto */
+document.querySelectorAll('.real-card').forEach(card=>{
+  card.addEventListener('click',()=>{window.location.href='mailto:brittanydreano.cm@gmail.com'});
+});
+</script>
+</body>
+</html>

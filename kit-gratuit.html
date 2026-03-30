@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kit Gratuit — Démarrez votre présence web | LocalWeb Pro</title>
+<meta name="description" content="Téléchargez gratuitement votre kit de démarrage web : checklist SEO local, guide Google My Business, modèles de textes. Pour indépendants et petites entreprises."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0B0B0E;--bg2:#111116;--bg3:#16161D;--card:#1C1C26;--card2:#20202C;
+  --nav-bg:rgba(11,11,14,0.88);
+  --accent:#C9F542;--accent2:#a8d934;
+  --accent-dim:rgba(201,245,66,0.12);--accent-dim2:rgba(201,245,66,0.06);
+  --text:#F0EDE8;--muted:#7A7A8E;--muted2:#56566A;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --success:#4DF0A0;--danger:#F04D6A;
+  --r:14px;--r2:22px;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#F5F3EF;--bg2:#EDEAE4;--bg3:#E8E4DC;--card:#FFFFFF;--card2:#F8F6F2;
+  --nav-bg:rgba(245,243,239,0.92);
+  --accent:#5A9600;--accent2:#4A7D00;
+  --accent-dim:rgba(90,150,0,0.1);--accent-dim2:rgba(90,150,0,0.05);
+  --text:#14140F;--muted:#6B6B5E;--muted2:#9A9A8A;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0;position:relative}
+.display{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.1;letter-spacing:-0.02em}
+.display em{font-style:italic;color:var(--accent)}
+.heading{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.15;letter-spacing:-0.02em}
+.heading em{font-style:italic;color:var(--accent)}
+.label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+.sub{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:540px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:100px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.04em;transition:all 0.22s ease;position:relative;overflow:hidden;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#0B0B0E}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,245,66,0.28)}
+.btn-ghost{border:1.5px solid var(--border2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-lg{padding:19px 38px;font-size:0.95rem}
+.btn-full{width:100%;justify-content:center}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;transition:box-shadow 0.3s}
+#nav.scrolled{box-shadow:0 2px 30px rgba(0,0,0,0.6)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);letter-spacing:-0.01em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-pill{display:flex;background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:3px;gap:0}
+.theme-pill button{width:28px;height:28px;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:0.88rem;transition:background 0.2s;color:var(--muted)}
+.theme-pill button.active{background:var(--accent);color:#0B0B0E}
+.nav-ham{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-ham span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.nav-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0}
+.nav-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;background:var(--bg);border-top:1px solid var(--border);padding:12px 24px 20px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{padding:12px 0;font-size:0.95rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color 0.2s}
+.nav-mobile a:last-child{border:none;color:var(--accent);font-weight:600}
+@media(max-width:700px){.nav-links{display:none}.nav-ham{display:flex}}
+
+/* BOTTOM NAV */
+#bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:95;background:var(--nav-bg);border-top:1px solid var(--border);padding:6px 0 calc(6px + env(safe-area-inset-bottom));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 6px;color:var(--muted);font-size:0.6rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;text-decoration:none}
+.bnav-item.active{color:var(--accent)}
+.bnav-item:hover{color:var(--text)}
+.bnav-icon{font-size:1.3rem;line-height:1.2;display:block}
+@media(max-width:768px){#bottom-nav{display:flex}body{padding-bottom:68px}}
+
+/* FOOTER */
+footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
+.footer-grid{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:20px}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:4px}
+.footer-logo span{color:var(--accent)}
+.footer-copy{font-size:0.8rem;color:var(--muted2)}
+.footer-trust-row{display:flex;gap:10px;align-items:center}
+.footer-badge{display:flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);padding:6px 12px;border-radius:100px}
+.footer-links{display:flex;gap:20px;align-items:center}
+.footer-links a{font-size:0.8rem;color:var(--muted2);transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;text-align:center}.footer-trust-row,.footer-links{justify-content:center}}
+
+/* ============================
+   PAGE HERO
+============================ */
+#hero{padding:100px 0 80px;position:relative;overflow:hidden;background:var(--bg2)}
+.hero-blob{position:absolute;top:-160px;right:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,245,66,0.08) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(201,245,66,0.25);color:var(--accent);font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;padding:7px 16px;border-radius:100px;margin-bottom:28px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+
+/* Kit visuel */
+.kit-visual{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:32px;position:relative;overflow:hidden}
+.kit-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),rgba(201,245,66,0.3))}
+.kit-items{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.kit-item{display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg3);border-radius:var(--r);border:1px solid var(--border);transition:border-color 0.2s,transform 0.2s}
+.kit-item:hover{border-color:rgba(201,245,66,0.25);transform:translateX(4px)}
+.kit-item-icon{font-size:1.6rem;flex-shrink:0;width:44px;height:44px;background:var(--accent-dim);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.kit-item-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;margin-bottom:2px}
+.kit-item-desc{font-size:0.78rem;color:var(--muted)}
+.kit-badge-free{display:inline-flex;align-items:center;gap:6px;background:rgba(77,240,160,0.12);border:1px solid rgba(77,240,160,0.25);color:var(--success);font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:100px;margin-top:20px}
+
+/* ============================
+   BÉNÉFICES
+============================ */
+#benefices{background:var(--bg)}
+.bene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.bene-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:32px 28px;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden}
+.bene-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.25s}
+.bene-card:hover{border-color:rgba(201,245,66,0.25);transform:translateY(-4px)}
+.bene-card:hover::after{transform:scaleX(1)}
+.bene-icon{font-size:2rem;margin-bottom:18px;display:block;width:52px;height:52px;background:var(--accent-dim);border-radius:14px;display:flex;align-items:center;justify-content:center}
+.bene-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:10px}
+.bene-text{font-size:0.9rem;color:var(--muted);line-height:1.6}
+@media(max-width:768px){.bene-grid{grid-template-columns:1fr}}
+
+/* ============================
+   FORMULAIRE
+============================ */
+#formulaire{background:var(--bg2)}
+.form-inner{max-width:600px;margin:0 auto}
+.form-wrap{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:44px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--r);padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:0.95rem;color:var(--text);outline:none;transition:border-color 0.2s,background 0.2s}
+.form-input::placeholder{color:var(--muted2)}
+.form-input:focus{border-color:var(--accent);background:var(--accent-dim2)}
+.form-hint{font-size:0.78rem;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:5px}
+.form-success-box{display:none;text-align:center;padding:32px 20px}
+.form-success-box.show{display:block}
+.form-success-box .icon{font-size:3.5rem;margin-bottom:16px}
+.form-success-box h3{font-family:'Instrument Serif',serif;font-size:1.8rem;color:var(--success);margin-bottom:10px}
+.form-success-box p{font-size:0.95rem;color:var(--muted)}
+
+/* ============================
+   CTA FINAL
+============================ */
+#cta-final{background:var(--accent);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+#cta-final::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.1),transparent 65%);pointer-events:none}
+.cta-title{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3rem);color:#0B0B0E;margin-bottom:14px;line-height:1.15}
+.cta-sub{font-size:1rem;color:rgba(11,11,14,0.65);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto}
+.btn-dark{background:#0B0B0E;color:var(--accent)}
+.btn-dark:hover{background:#1C1C26;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.35)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Local<span>Web</span> Pro</a>
+    <ul class="nav-links">
+      <li><a href="kit-gratuit.html" class="active">Kit Gratuit</a></li>
+      <li><a href="templates.html">Templates</a></li>
+      <li><a href="kit-premium.html">Kit Premium</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-pill">
+        <button id="btnDark" class="active" title="Thème sombre">🌙</button>
+        <button id="btnLight" title="Thème clair">☀️</button>
+      </div>
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <button class="nav-ham" id="navHam" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMob">
+    <a href="kit-gratuit.html">Kit Gratuit</a>
+    <a href="templates.html">Templates</a>
+    <a href="kit-premium.html">Kit Premium</a>
+    <a href="contact.html">Contact</a>
+    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge fade-in">
+          <span>🎁</span> 100% gratuit — aucune carte requise
+        </div>
+        <h1 class="display fade-in d1">
+          Votre kit pour<br/>démarrer sur<br/><em>internet.</em>
+        </h1>
+        <p class="sub fade-in d2" style="margin:20px 0 36px">
+          Checklist SEO local, guide Google My Business, modèles de textes prêts à l'emploi. Tout ce qu'il faut pour commencer — offert.
+        </p>
+        <a href="#formulaire" class="btn btn-primary btn-lg fade-in d3">
+          Recevoir mon kit gratuit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="fade-in d4" style="font-size:0.82rem;color:var(--muted);margin-top:14px">✅ Déjà téléchargé par +120 professionnels</p>
+      </div>
+      <div class="fade-in d2">
+        <div class="kit-visual">
+          <span class="label" style="margin-bottom:18px">Ce que vous recevez</span>
+          <div class="kit-items">
+            <div class="kit-item">
+              <div class="kit-item-icon">📋</div>
+              <div>
+                <div class="kit-item-title">Checklist SEO Local</div>
+                <div class="kit-item-desc">20 points pour apparaître dans Google près de chez vous</div>
+              </div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-icon">📍</div>
+              <div>
+                <div class="kit-item-title">Guide Google My Business</div>
+                <div class="kit-item-desc">Configurez votre fiche en 30 minutes, étape par étape</div>
+              </div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-icon">✍️</div>
+              <div>
+                <div class="kit-item-title">Modèles de textes</div>
+                <div class="kit-item-desc">5 templates de pages web pour votre secteur d'activité</div>
+              </div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-icon">📊</div>
+              <div>
+                <div class="kit-item-title">Calculateur de ROI</div>
+                <div class="kit-item-desc">Estimez le retour sur investissement de votre site</div>
+              </div>
+            </div>
+          </div>
+          <div class="kit-badge-free">✅ Valeur estimée : 80€ — offert gratuitement</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BÉNÉFICES -->
+<section id="benefices" class="section">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto" class="fade-in">
+      <span class="label">Pourquoi ce kit ?</span>
+      <h2 class="heading">Tout ce qu'il faut pour<br/>faire vos <em>premiers pas.</em></h2>
+      <p class="sub" style="margin:14px auto 0;text-align:center">Même sans site, ces outils vous permettent d'exister sur internet et d'attirer vos premiers clients locaux.</p>
+    </div>
+    <div class="bene-grid">
+      <div class="bene-card fade-in d1">
+        <div class="bene-icon">🔍</div>
+        <div class="bene-title">Visibilité immédiate</div>
+        <p class="bene-text">Appliquez la checklist SEO et apparaissez dans les résultats Google Maps pour votre ville en quelques jours. Sans site. Sans budget publicité.</p>
+      </div>
+      <div class="bene-card fade-in d2">
+        <div class="bene-icon">⚡</div>
+        <div class="bene-title">Actions concrètes en 1h</div>
+        <p class="bene-text">Chaque ressource est actionnable immédiatement. Pas de théorie. Des étapes numérotées, des copies à coller, des captures d'écran pour vous guider.</p>
+      </div>
+      <div class="bene-card fade-in d3">
+        <div class="bene-icon">📈</div>
+        <div class="bene-title">Base pour aller plus loin</div>
+        <p class="bene-text">Le kit pose les fondations. Quand vous serez prêt pour un site professionnel, votre référencement local sera déjà en place — et le démarrage sera encore plus rapide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section id="formulaire" class="section">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 52px" class="fade-in">
+      <span class="label">Téléchargement gratuit</span>
+      <h2 class="heading">Recevez le kit<br/><em>par e-mail</em></h2>
+      <p class="sub" style="margin:14px auto 0;text-align:center">Entrez votre e-mail professionnel et recevez le kit dans les 5 minutes.</p>
+    </div>
+    <div class="form-inner fade-in d1">
+      <div class="form-wrap">
+        <div id="kitFormFields">
+          <div class="form-group">
+            <label class="form-label" for="kPrenom">Votre prénom</label>
+            <input class="form-input" type="text" id="kPrenom" placeholder="Jean-Paul" required autocomplete="given-name"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="kEmail">Votre e-mail</label>
+            <input class="form-input" type="email" id="kEmail" placeholder="jean-paul@monentreprise.fr" required autocomplete="email"/>
+            <div class="form-hint">🔒 Aucun spam. Désabonnement en 1 clic.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="kMetier">Votre activité</label>
+            <select class="form-select" id="kMetier">
+              <option value="">Sélectionnez votre secteur…</option>
+              <option>Artisan (plombier, électricien, peintre…)</option>
+              <option>Freelance (dev, graphiste, consultant…)</option>
+              <option>Coach / Thérapeute</option>
+              <option>Restaurant / Commerce local</option>
+              <option>Petite entreprise (TPE)</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-lg btn-full" id="kitSubmit" type="button">
+            Envoyer mon kit gratuit →
+          </button>
+          <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:14px">
+            Ou écrivez directement à <a href="mailto:brittanydreano.cm@gmail.com" style="color:var(--accent)">brittanydreano.cm@gmail.com</a>
+          </p>
+        </div>
+        <div class="form-success-box" id="kitSuccess">
+          <div class="icon">🎉</div>
+          <h3>C'est envoyé !</h3>
+          <p>Vérifiez votre boîte mail dans les 5 prochaines minutes. Si vous ne voyez rien, vérifiez les spams.</p>
+          <a href="kit-premium.html" class="btn btn-primary btn-lg" style="margin-top:24px">Découvrir le Kit Premium →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container">
+    <p class="cta-title fade-in">Prêt pour un vrai site ?</p>
+    <p class="cta-sub fade-in d1">Le Kit Gratuit pose les bases. Le Kit Premium vous amène des clients. Découvrez la différence.</p>
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap" class="fade-in d2">
+      <a href="kit-premium.html" class="btn btn-dark btn-lg">Voir le Kit Premium →</a>
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-ghost btn-lg" style="border-color:rgba(11,11,14,0.3);color:#0B0B0E">Poser une question</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Local<span>Web</span> Pro</div>
+        <div class="footer-copy">© 2025 LocalWeb Pro — Tous droits réservés</div>
+      </div>
+      <div class="footer-trust-row">
+        <div class="footer-badge">🔒 Site sécurisé</div>
+        <div class="footer-badge">🇫🇷 Fait en France</div>
+      </div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Accueil</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTTOM NAV MOBILE -->
+<nav id="bottom-nav" aria-label="Navigation principale">
+  <a href="index.html" class="bnav-item">
+    <span class="bnav-icon">🏠</span><span>Accueil</span>
+  </a>
+  <a href="kit-gratuit.html" class="bnav-item active">
+    <span class="bnav-icon">🎁</span><span>Gratuit</span>
+  </a>
+  <a href="kit-premium.html" class="bnav-item">
+    <span class="bnav-icon">⭐</span><span>Premium</span>
+  </a>
+  <a href="templates.html" class="bnav-item">
+    <span class="bnav-icon">🎨</span><span>Templates</span>
+  </a>
+  <a href="contact.html" class="bnav-item">
+    <span class="bnav-icon">✉️</span><span>Contact</span>
+  </a>
+</nav>
+
+<script>
+/* THEME */
+(function(){
+  const h=document.documentElement;
+  const d=document.getElementById('btnDark');
+  const l=document.getElementById('btnLight');
+  const apply=t=>{
+    t==='light'?h.setAttribute('data-theme','light'):h.removeAttribute('data-theme');
+    d.classList.toggle('active',t!=='light');
+    l.classList.toggle('active',t==='light');
+    localStorage.setItem('lwp-t',t);
+  };
+  apply(localStorage.getItem('lwp-t')||'dark');
+  d.onclick=()=>apply('dark');
+  l.onclick=()=>apply('light');
+})();
+
+/* NAV */
+const ham=document.getElementById('navHam');
+const mob=document.getElementById('navMob');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o)});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');ham.classList.remove('open')}));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20),{passive:true});
+
+/* ANIMATIONS */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+/* FORM */
+document.getElementById('kitSubmit').addEventListener('click',async function(){
+  const prenom=document.getElementById('kPrenom').value.trim();
+  const email=document.getElementById('kEmail').value.trim();
+  if(!prenom||!email){
+    if(!prenom){const el=document.getElementById('kPrenom');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
+    if(!email){const el=document.getElementById('kEmail');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
+    return;
+  }
+  this.textContent='Envoi en cours…';this.disabled=true;
+  try{
+    await fetch('https://formsubmit.co/ajax/brittanydreano.cm@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:`🎁 Kit Gratuit demandé — ${prenom}`,
+        Prénom:prenom,Email:email,
+        Secteur:document.getElementById('kMetier').value,
+        _template:'table'
+      })
+    });
+    document.getElementById('kitFormFields').style.display='none';
+    document.getElementById('kitSuccess').classList.add('show');
+  }catch{
+    this.textContent='❌ Erreur — réessayez';this.disabled=false;
+    setTimeout(()=>{this.textContent='Envoyer mon kit gratuit →';},3000);
+  }
+});
+</script>
+</body>
+</html>

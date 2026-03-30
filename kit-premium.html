@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kit Premium — Site Professionnel en 7 jours | LocalWeb Pro</title>
+<meta name="description" content="Site web professionnel sur-mesure livré en 7 jours. Design moderne, SEO local, mobile-first. À partir de 600€ — satisfait ou remboursé."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0B0B0E;--bg2:#111116;--bg3:#16161D;--card:#1C1C26;--card2:#20202C;
+  --nav-bg:rgba(11,11,14,0.88);
+  --accent:#C9F542;--accent2:#a8d934;
+  --accent-dim:rgba(201,245,66,0.12);--accent-dim2:rgba(201,245,66,0.06);
+  --text:#F0EDE8;--muted:#7A7A8E;--muted2:#56566A;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --success:#4DF0A0;--danger:#F04D6A;
+  --r:14px;--r2:22px;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#F5F3EF;--bg2:#EDEAE4;--bg3:#E8E4DC;--card:#FFFFFF;--card2:#F8F6F2;
+  --nav-bg:rgba(245,243,239,0.92);
+  --accent:#5A9600;--accent2:#4A7D00;
+  --accent-dim:rgba(90,150,0,0.1);--accent-dim2:rgba(90,150,0,0.05);
+  --text:#14140F;--muted:#6B6B5E;--muted2:#9A9A8A;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0;position:relative}
+.display{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.1;letter-spacing:-0.02em}
+.display em{font-style:italic;color:var(--accent)}
+.heading{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.15;letter-spacing:-0.02em}
+.heading em{font-style:italic;color:var(--accent)}
+.label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+.sub{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:540px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:100px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.04em;transition:all 0.22s ease;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#0B0B0E}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,245,66,0.28)}
+.btn-ghost{border:1.5px solid var(--border2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-lg{padding:19px 38px;font-size:0.95rem}
+.btn-full{width:100%;justify-content:center}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;transition:box-shadow 0.3s}
+#nav.scrolled{box-shadow:0 2px 30px rgba(0,0,0,0.6)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);letter-spacing:-0.01em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-pill{display:flex;background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:3px}
+.theme-pill button{width:28px;height:28px;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:0.88rem;transition:background 0.2s;color:var(--muted)}
+.theme-pill button.active{background:var(--accent);color:#0B0B0E}
+.nav-ham{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-ham span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.nav-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0}
+.nav-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;background:var(--bg);border-top:1px solid var(--border);padding:12px 24px 20px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{padding:12px 0;font-size:0.95rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color 0.2s}
+.nav-mobile a:last-child{border:none;color:var(--accent);font-weight:600}
+@media(max-width:700px){.nav-links{display:none}.nav-ham{display:flex}}
+
+/* BOTTOM NAV */
+#bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:95;background:var(--nav-bg);border-top:1px solid var(--border);padding:6px 0 calc(6px + env(safe-area-inset-bottom));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 6px;color:var(--muted);font-size:0.6rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;text-decoration:none}
+.bnav-item.active{color:var(--accent)}
+.bnav-icon{font-size:1.3rem;line-height:1.2;display:block}
+@media(max-width:768px){#bottom-nav{display:flex}body{padding-bottom:68px}}
+
+/* FOOTER */
+footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
+.footer-grid{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:20px}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:4px}
+.footer-logo span{color:var(--accent)}
+.footer-copy{font-size:0.8rem;color:var(--muted2)}
+.footer-trust-row{display:flex;gap:10px;align-items:center}
+.footer-badge{display:flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);padding:6px 12px;border-radius:100px}
+.footer-links{display:flex;gap:20px;align-items:center}
+.footer-links a{font-size:0.8rem;color:var(--muted2);transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;text-align:center}.footer-trust-row,.footer-links{justify-content:center}}
+
+/* ============================
+   HERO
+============================ */
+#hero{padding:100px 0 90px;position:relative;overflow:hidden}
+.hero-blob{position:absolute;top:-180px;right:-180px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,245,66,0.07) 0%,transparent 60%);pointer-events:none}
+.hero-promo{display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(201,245,66,0.25);color:var(--accent);font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;padding:7px 16px;border-radius:100px;margin-bottom:28px;animation:badge-pulse 3s infinite}
+@keyframes badge-pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,245,66,0.25)}50%{box-shadow:0 0 0 8px rgba(201,245,66,0)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.trust-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:0.82rem;color:var(--muted)}
+.trust-item strong{color:var(--text);font-weight:600}
+
+/* Hero Visual */
+.price-card{background:var(--card);border:1px solid var(--accent);border-radius:var(--r2);padding:36px;position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(201,245,66,0.06),var(--card) 55%)}
+.price-badge{position:absolute;top:-13px;left:28px;background:var(--accent);color:#0B0B0E;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;padding:4px 14px;border-radius:100px;letter-spacing:0.08em;text-transform:uppercase}
+.price-name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px}
+.price-display{display:flex;align-items:baseline;gap:10px;margin-bottom:28px}
+.price-main{font-family:'Instrument Serif',serif;font-size:3.4rem;color:var(--text);line-height:1}
+.price-old{font-size:1.1rem;color:var(--muted2);text-decoration:line-through}
+.price-period{font-size:0.85rem;color:var(--muted)}
+.feat-list{display:flex;flex-direction:column;gap:11px}
+.feat-item{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:var(--muted);line-height:1.4}
+.feat-check{color:var(--success);flex-shrink:0;margin-top:1px}
+.guarantee-strip{display:flex;align-items:center;gap:8px;background:rgba(77,240,160,0.08);border:1px solid rgba(77,240,160,0.2);border-radius:var(--r);padding:12px 16px;margin-top:24px;font-size:0.85rem;color:var(--success)}
+
+/* ============================
+   BÉNÉFICES DÉTAILLÉS
+============================ */
+#benefices{background:var(--bg2)}
+.bene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.bene-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:32px 28px;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden}
+.bene-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s}
+.bene-card:hover{border-color:rgba(201,245,66,0.25);transform:translateY(-4px)}
+.bene-card:hover::before{transform:scaleX(1)}
+.bene-icon{width:52px;height:52px;background:var(--accent-dim);border:1px solid rgba(201,245,66,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.bene-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:10px}
+.bene-text{font-size:0.9rem;color:var(--muted);line-height:1.6}
+@media(max-width:768px){.bene-grid{grid-template-columns:1fr}}
+
+/* ============================
+   COMPARAISON
+============================ */
+#comparaison{background:var(--bg)}
+.comp-table{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);overflow:hidden;margin-top:52px;max-width:800px;margin-left:auto;margin-right:auto}
+.comp-head{display:grid;grid-template-columns:2fr 1fr 1fr;background:var(--card2);border-bottom:1px solid var(--border)}
+.comp-head-cell{padding:18px 24px;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+.comp-head-cell.featured{color:var(--accent)}
+.comp-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid var(--border)}
+.comp-row:last-child{border:none}
+.comp-row:hover{background:var(--accent-dim2)}
+.comp-cell{padding:16px 24px;font-size:0.9rem;color:var(--muted);display:flex;align-items:center}
+.comp-cell.feature{color:var(--text)}
+.comp-cell.check{color:var(--success);font-size:1.1rem;justify-content:center}
+.comp-cell.cross{color:var(--muted2);font-size:1.1rem;justify-content:center}
+@media(max-width:600px){
+  .comp-head,.comp-row{grid-template-columns:1fr 44px 44px}
+  .comp-cell{padding:12px 10px;font-size:0.82rem}
+  .comp-head-cell{padding:14px 10px;font-size:0.68rem}
+}
+
+/* ============================
+   PROCESSUS
+============================ */
+#processus{background:var(--bg2)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px;position:relative}
+.proc-grid::before{content:'';position:absolute;top:44px;left:calc(12.5% + 16px);right:calc(12.5% + 16px);height:1px;background:linear-gradient(90deg,var(--accent),rgba(201,245,66,0.1))}
+.proc-step{text-align:center;padding:0 8px;position:relative}
+.proc-num{width:88px;height:88px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;position:relative;z-index:1;transition:border-color 0.3s,background 0.3s}
+.proc-step:hover .proc-num{border-color:var(--accent);background:var(--accent-dim)}
+.proc-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:8px}
+.proc-text{font-size:0.85rem;color:var(--muted);line-height:1.55}
+.proc-day{display:inline-block;margin-top:10px;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;color:var(--accent);background:var(--accent-dim);padding:3px 10px;border-radius:100px}
+@media(max-width:768px){.proc-grid{grid-template-columns:1fr 1fr}.proc-grid::before{display:none}}
+@media(max-width:480px){.proc-grid{grid-template-columns:1fr}}
+
+/* ============================
+   TÉMOIGNAGES
+============================ */
+#temoignages{background:var(--bg)}
+.temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.temo-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px;transition:border-color 0.3s,transform 0.3s}
+.temo-card:hover{border-color:rgba(201,245,66,0.2);transform:translateY(-4px)}
+.temo-stars{color:var(--accent);font-size:0.9rem;margin-bottom:14px;letter-spacing:2px}
+.temo-text{font-size:0.92rem;color:var(--text);line-height:1.65;margin-bottom:20px;font-style:italic}
+.temo-author{display:flex;align-items:center;gap:12px}
+.temo-avatar{width:42px;height:42px;border-radius:50%;background:var(--accent-dim);border:1.5px solid rgba(201,245,66,0.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.temo-name{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700}
+.temo-role{font-size:0.78rem;color:var(--muted)}
+.temo-kpi{display:inline-flex;align-items:center;gap:5px;background:rgba(77,240,160,0.1);border:1px solid rgba(77,240,160,0.2);color:var(--success);font-size:0.72rem;font-family:'Syne',sans-serif;font-weight:700;padding:3px 10px;border-radius:100px;margin-top:6px}
+@media(max-width:768px){.temo-grid{grid-template-columns:1fr}}
+
+/* ============================
+   GARANTIE + CTA
+============================ */
+#garantie{background:var(--bg2)}
+.garantie-inner{background:var(--card);border:1px solid rgba(201,245,66,0.2);border-radius:var(--r2);padding:56px;text-align:center;position:relative;overflow:hidden;max-width:760px;margin:0 auto}
+.garantie-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,245,66,0.06),transparent 60%);pointer-events:none}
+.garantie-badge{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#0B0B0E;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;padding:12px 28px;border-radius:100px;margin-bottom:28px}
+.garantie-title{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px;line-height:1.2}
+.garantie-text{font-size:1rem;color:var(--muted);line-height:1.7;max-width:520px;margin:0 auto 32px}
+.garantie-items{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:36px}
+.garantie-item{display:flex;align-items:center;gap:8px;font-size:0.88rem;color:var(--muted)}
+.g-check{color:var(--success);font-size:1.1rem}
+@media(max-width:640px){.garantie-inner{padding:36px 24px}.garantie-items{gap:16px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Local<span>Web</span> Pro</a>
+    <ul class="nav-links">
+      <li><a href="kit-gratuit.html">Kit Gratuit</a></li>
+      <li><a href="templates.html">Templates</a></li>
+      <li><a href="kit-premium.html" class="active">Kit Premium</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-pill">
+        <button id="btnDark" class="active" title="Thème sombre">🌙</button>
+        <button id="btnLight" title="Thème clair">☀️</button>
+      </div>
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <button class="nav-ham" id="navHam" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMob">
+    <a href="kit-gratuit.html">Kit Gratuit</a>
+    <a href="templates.html">Templates</a>
+    <a href="kit-premium.html">Kit Premium</a>
+    <a href="contact.html">Contact</a>
+    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-promo fade-in">
+          🔥 PROMO LANCEMENT — 600€ au lieu de 800€
+        </div>
+        <h1 class="display fade-in d1">
+          Votre site pro<br/>livré en<br/><em>7 jours.</em>
+        </h1>
+        <p class="sub fade-in d2" style="margin:20px 0 36px">
+          Design sur-mesure, mobile-first, optimisé pour Google. Je gère tout. Vous recevez des appels.
+        </p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap" class="fade-in d3">
+          <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-lg">
+            Je commande mon site →
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="templates.html" class="btn btn-ghost">Voir des exemples</a>
+        </div>
+        <div class="trust-row fade-in d4">
+          <div class="trust-item">⭐⭐⭐⭐⭐ <strong>4,9/5</strong></div>
+          <div class="trust-item">✅ <strong>100%</strong> satisfait ou remboursé</div>
+          <div class="trust-item">🔒 Sans engagement</div>
+        </div>
+      </div>
+      <div class="fade-in d2">
+        <div class="price-card">
+          <div class="price-badge">⭐ Plus populaire</div>
+          <div class="price-name">Kit Premium — Site Complet</div>
+          <div class="price-display">
+            <span class="price-main">600€</span>
+            <span class="price-old">800€</span>
+            <span class="price-period">paiement unique</span>
+          </div>
+          <ul class="feat-list">
+            <li class="feat-item"><span class="feat-check">✅</span> Site 1 à 3 pages, design sur-mesure</li>
+            <li class="feat-item"><span class="feat-check">✅</span> 100% adapté mobile et tablette</li>
+            <li class="feat-item"><span class="feat-check">✅</span> Bouton appel direct (1 clic)</li>
+            <li class="feat-item"><span class="feat-check">✅</span> Formulaire de contact intégré</li>
+            <li class="feat-item"><span class="feat-check">✅</span> Google Maps + fiche Google My Business</li>
+            <li class="feat-item"><span class="feat-check">✅</span> Référencement local optimisé (SEO)</li>
+            <li class="feat-item"><span class="feat-check">✅</span> Livraison garantie en 7 jours ouvrés</li>
+            <li class="feat-item"><span class="feat-check">✅</span> Révisions illimitées jusqu'à satisfaction</li>
+          </ul>
+          <div class="guarantee-strip">🛡️ Satisfait ou remboursé — garantie totale</div>
+          <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-full btn-lg" style="margin-top:24px">
+            Commander maintenant →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BÉNÉFICES -->
+<section id="benefices" class="section">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Ce que vous gagnez vraiment</span>
+      <h2 class="heading">Pas un site. Des <em>clients.</em></h2>
+      <p class="sub" style="margin-top:12px">Chaque décision de design, chaque texte, chaque structure de page est pensée pour générer des appels et des demandes.</p>
+    </div>
+    <div class="bene-grid">
+      <div class="bene-card fade-in d1">
+        <div class="bene-icon">⚡</div>
+        <div class="bene-title">Livraison en 7 jours</div>
+        <p class="bene-text">Pas 3 mois d'attente. Votre site est en ligne en 7 jours ouvrés, garanti. Du premier appel à la mise en production, je gère tout.</p>
+      </div>
+      <div class="bene-card fade-in d2">
+        <div class="bene-icon">📱</div>
+        <div class="bene-title">Mobile-first et rapide</div>
+        <p class="bene-text">70% de vos futurs clients cherchent sur mobile. Votre site s'affiche parfaitement sur tous les écrans, se charge en moins de 2 secondes.</p>
+      </div>
+      <div class="bene-card fade-in d3">
+        <div class="bene-icon">🔍</div>
+        <div class="bene-title">Visible sur Google Local</div>
+        <p class="bene-text">SEO local optimisé dès le départ. Apparaissez dans les recherches "votre métier + votre ville". Vos concurrents qui n'ont pas de site vous enverront leurs clients.</p>
+      </div>
+      <div class="bene-card fade-in d1">
+        <div class="bene-icon">🎯</div>
+        <div class="bene-title">Textes rédigés pour vous</div>
+        <p class="bene-text">Vous n'écrivez rien. Je rédige des textes adaptés à votre activité, à vos clients, et optimisés pour convaincre et convertir.</p>
+      </div>
+      <div class="bene-card fade-in d2">
+        <div class="bene-icon">💰</div>
+        <div class="bene-title">Rentable dès 2 clients</div>
+        <p class="bene-text">À 600€, si votre prestation vaut 300€, il vous faut 2 clients pour rentabiliser. La plupart les obtiennent dans les 2 premières semaines.</p>
+      </div>
+      <div class="bene-card fade-in d3">
+        <div class="bene-icon">🔄</div>
+        <div class="bene-title">Révisions illimitées</div>
+        <p class="bene-text">Pas satisfait d'un titre ? Vous voulez changer une couleur ? Toutes les modifications sont incluses jusqu'à ce que vous soyez 100% heureux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARAISON -->
+<section id="comparaison" class="section">
+  <div class="container">
+    <div style="text-align:center" class="fade-in">
+      <span class="label">Comparaison</span>
+      <h2 class="heading">Kit Gratuit vs<br/><em>Kit Premium</em></h2>
+      <p class="sub" style="margin:14px auto 0;text-align:center;max-width:480px">Commencez par le kit gratuit si vous débutez. Passez au premium quand vous voulez des résultats.</p>
+    </div>
+    <div class="comp-table fade-in d1">
+      <div class="comp-head">
+        <div class="comp-head-cell">Fonctionnalité</div>
+        <div class="comp-head-cell" style="text-align:center">Kit Gratuit</div>
+        <div class="comp-head-cell featured" style="text-align:center">Kit Premium</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Checklist SEO local</div>
+        <div class="comp-cell check">✅</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Guide Google My Business</div>
+        <div class="comp-cell check">✅</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Modèles de textes</div>
+        <div class="comp-cell check">✅</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Site web professionnel sur-mesure</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Design responsive mobile-first</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Référencement Google intégré</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Bouton appel 1 clic + formulaire</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Textes rédigés pour vous</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Livraison en 7 jours garantie</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Révisions illimitées</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell feature">Satisfait ou remboursé</div>
+        <div class="comp-cell cross">✗</div>
+        <div class="comp-cell check">✅</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="fade-in d2">
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-lg">Commander le Kit Premium — 600€ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSUS -->
+<section id="processus" class="section">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto" class="fade-in">
+      <span class="label">Comment ça marche</span>
+      <h2 class="heading">Simple. Rapide.<br/><em>Efficace.</em></h2>
+      <p class="sub" style="margin:0 auto;text-align:center">Du premier appel à vos premiers clients en ligne — je gère tout.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step fade-in d1">
+        <div class="proc-num">📞</div>
+        <div class="proc-title">Appel découverte</div>
+        <p class="proc-text">20 minutes pour comprendre votre activité, vos clients, vos objectifs. Sans jargon technique.</p>
+        <span class="proc-day">Jour 1</span>
+      </div>
+      <div class="proc-step fade-in d2">
+        <div class="proc-num">✏️</div>
+        <div class="proc-title">Je crée votre site</div>
+        <p class="proc-text">Design + contenu + textes rédigés pour vous. Vous ne faites rien.</p>
+        <span class="proc-day">Jours 2–6</span>
+      </div>
+      <div class="proc-step fade-in d3">
+        <div class="proc-num">✅</div>
+        <div class="proc-title">Vous validez</div>
+        <p class="proc-text">Révisions illimitées jusqu'à ce que vous soyez 100% satisfait de chaque détail.</p>
+        <span class="proc-day">Jour 7</span>
+      </div>
+      <div class="proc-step fade-in d4">
+        <div class="proc-num">🚀</div>
+        <div class="proc-title">Mise en ligne</div>
+        <p class="proc-text">Votre site est visible sur Google. Les premiers appels arrivent dès les jours suivants.</p>
+        <span class="proc-day">Jour 7–8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages" class="section">
+  <div class="container">
+    <div style="text-align:center" class="fade-in">
+      <span class="label">Ils l'ont fait</span>
+      <h2 class="heading">Des résultats <em>réels.</em></h2>
+    </div>
+    <div class="temo-grid">
+      <div class="temo-card fade-in d1">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">"En 3 semaines après la mise en ligne, j'avais déjà 6 nouveaux chantiers. Le site s'est rentabilisé avant même que je reçoive la facture."</p>
+        <div class="temo-author">
+          <div class="temo-avatar">🔧</div>
+          <div>
+            <div class="temo-name">Marc Dupont</div>
+            <div class="temo-role">Plombier — Levallois-Perret</div>
+            <div class="temo-kpi">📞 +14 appels/semaine</div>
+          </div>
+        </div>
+      </div>
+      <div class="temo-card fade-in d2">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">"Je suis coach et je n'avais aucun site. Maintenant 80% de mes nouveaux clients viennent via Google. C'est bluffant pour le prix que j'ai payé."</p>
+        <div class="temo-author">
+          <div class="temo-avatar">🎯</div>
+          <div>
+            <div class="temo-name">Clara Martin</div>
+            <div class="temo-role">Life Coach — Lyon</div>
+            <div class="temo-kpi">📈 +8 clients/mois</div>
+          </div>
+        </div>
+      </div>
+      <div class="temo-card fade-in d3">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">"Livré en exactement 7 jours comme promis. Le site est propre, professionnel. Mon concurrent qui n'a pas de site nous envoie même ses clients maintenant."</p>
+        <div class="temo-author">
+          <div class="temo-avatar">⚡</div>
+          <div>
+            <div class="temo-name">Thomas Moreau</div>
+            <div class="temo-role">Électricien — Nantes</div>
+            <div class="temo-kpi">⚡ Délai respecté à 100%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIE + CTA -->
+<section id="garantie" class="section">
+  <div class="container">
+    <div class="garantie-inner fade-in">
+      <div class="garantie-badge">🛡️ Garantie Satisfait ou Remboursé</div>
+      <h2 class="garantie-title">Vous n'aimez pas le résultat ?<br/>Je vous rembourse.</h2>
+      <p class="garantie-text">Si après les révisions vous n'êtes pas satisfait à 100% de votre site, je vous rembourse intégralement. Aucune question posée. Zéro risque pour vous.</p>
+      <div class="garantie-items">
+        <div class="garantie-item"><span class="g-check">✅</span> Révisions illimitées</div>
+        <div class="garantie-item"><span class="g-check">✅</span> Remboursement intégral si insatisfait</div>
+        <div class="garantie-item"><span class="g-check">✅</span> Fichiers livrés si vous partez</div>
+      </div>
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-lg">
+        Commander mon site — 600€ →
+      </a>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:14px">Ou contactez-moi : <a href="mailto:brittanydreano.cm@gmail.com" style="color:var(--accent)">brittanydreano.cm@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Local<span>Web</span> Pro</div>
+        <div class="footer-copy">© 2025 LocalWeb Pro — Tous droits réservés</div>
+      </div>
+      <div class="footer-trust-row">
+        <div class="footer-badge">🔒 Site sécurisé</div>
+        <div class="footer-badge">🇫🇷 Fait en France</div>
+      </div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Accueil</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTTOM NAV MOBILE -->
+<nav id="bottom-nav" aria-label="Navigation principale">
+  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span>Accueil</span></a>
+  <a href="kit-gratuit.html" class="bnav-item"><span class="bnav-icon">🎁</span><span>Gratuit</span></a>
+  <a href="kit-premium.html" class="bnav-item active"><span class="bnav-icon">⭐</span><span>Premium</span></a>
+  <a href="templates.html" class="bnav-item"><span class="bnav-icon">🎨</span><span>Templates</span></a>
+  <a href="contact.html" class="bnav-item"><span class="bnav-icon">✉️</span><span>Contact</span></a>
+</nav>
+
+<script>
+(function(){
+  const h=document.documentElement;
+  const d=document.getElementById('btnDark');
+  const l=document.getElementById('btnLight');
+  const apply=t=>{t==='light'?h.setAttribute('data-theme','light'):h.removeAttribute('data-theme');d.classList.toggle('active',t!=='light');l.classList.toggle('active',t==='light');localStorage.setItem('lwp-t',t)};
+  apply(localStorage.getItem('lwp-t')||'dark');
+  d.onclick=()=>apply('dark');l.onclick=()=>apply('light');
+})();
+const ham=document.getElementById('navHam'),mob=document.getElementById('navMob');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o)});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');ham.classList.remove('open')}));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20),{passive:true});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+</script>
+</body>
+</html>

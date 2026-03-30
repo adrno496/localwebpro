@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact — LocalWeb Pro</title>
+<meta name="description" content="Contactez LocalWeb Pro pour démarrer votre projet web. Réponse garantie sous 24h. Email : brittanydreano.cm@gmail.com"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0B0B0E;--bg2:#111116;--bg3:#16161D;--card:#1C1C26;--card2:#20202C;
+  --nav-bg:rgba(11,11,14,0.88);
+  --accent:#C9F542;--accent2:#a8d934;
+  --accent-dim:rgba(201,245,66,0.12);--accent-dim2:rgba(201,245,66,0.06);
+  --text:#F0EDE8;--muted:#7A7A8E;--muted2:#56566A;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --success:#4DF0A0;--danger:#F04D6A;
+  --r:14px;--r2:22px;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#F5F3EF;--bg2:#EDEAE4;--bg3:#E8E4DC;--card:#FFFFFF;--card2:#F8F6F2;
+  --nav-bg:rgba(245,243,239,0.92);
+  --accent:#5A9600;--accent2:#4A7D00;
+  --accent-dim:rgba(90,150,0,0.1);--accent-dim2:rgba(90,150,0,0.05);
+  --text:#14140F;--muted:#6B6B5E;--muted2:#9A9A8A;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0;position:relative}
+.heading{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.15;letter-spacing:-0.02em}
+.heading em{font-style:italic;color:var(--accent)}
+.label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+.sub{font-size:1.05rem;color:var(--muted);line-height:1.7}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:100px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.04em;transition:all 0.22s ease;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#0B0B0E}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,245,66,0.28)}
+.btn-ghost{border:1.5px solid var(--border2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-lg{padding:19px 38px;font-size:0.95rem}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;transition:box-shadow 0.3s}
+#nav.scrolled{box-shadow:0 2px 30px rgba(0,0,0,0.6)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);letter-spacing:-0.01em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-pill{display:flex;background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:3px}
+.theme-pill button{width:28px;height:28px;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:0.88rem;transition:background 0.2s;color:var(--muted)}
+.theme-pill button.active{background:var(--accent);color:#0B0B0E}
+.nav-ham{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-ham span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.nav-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0}
+.nav-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;background:var(--bg);border-top:1px solid var(--border);padding:12px 24px 20px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{padding:12px 0;font-size:0.95rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color 0.2s}
+.nav-mobile a:last-child{border:none;color:var(--accent);font-weight:600}
+@media(max-width:700px){.nav-links{display:none}.nav-ham{display:flex}}
+
+/* BOTTOM NAV */
+#bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:95;background:var(--nav-bg);border-top:1px solid var(--border);padding:6px 0 calc(6px + env(safe-area-inset-bottom));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 6px;color:var(--muted);font-size:0.6rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;text-decoration:none}
+.bnav-item.active{color:var(--accent)}
+.bnav-icon{font-size:1.3rem;line-height:1.2;display:block}
+@media(max-width:768px){#bottom-nav{display:flex}body{padding-bottom:68px}}
+
+/* FOOTER */
+footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
+.footer-grid{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:20px}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:4px}
+.footer-logo span{color:var(--accent)}
+.footer-copy{font-size:0.8rem;color:var(--muted2)}
+.footer-trust-row{display:flex;gap:10px;align-items:center}
+.footer-badge{display:flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);padding:6px 12px;border-radius:100px}
+.footer-links{display:flex;gap:20px;align-items:center}
+.footer-links a{font-size:0.8rem;color:var(--muted2);transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;text-align:center}.footer-trust-row,.footer-links{justify-content:center}}
+
+/* ============================
+   HERO CONTACT
+============================ */
+#hero{padding:90px 0 80px;background:var(--bg2);position:relative;overflow:hidden}
+.hero-blob{position:absolute;top:-160px;right:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,245,66,0.07) 0%,transparent 60%);pointer-events:none}
+
+/* ============================
+   CONTACT GRID
+============================ */
+#contact-section{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+
+/* Info panel */
+.info-cards{display:flex;flex-direction:column;gap:16px;margin-top:36px}
+.info-card{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);transition:border-color 0.2s,transform 0.2s}
+.info-card:hover{border-color:rgba(201,245,66,0.25);transform:translateX(4px)}
+.info-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-dim);border:1px solid rgba(201,245,66,0.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.info-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;margin-bottom:4px}
+.info-text{font-size:0.9rem;color:var(--muted);line-height:1.5}
+.info-text a{color:var(--accent);transition:opacity 0.2s}
+.info-text a:hover{opacity:0.8}
+
+/* Email hero display */
+.email-display{display:flex;align-items:center;gap:12px;padding:22px 28px;background:var(--card);border:1.5px solid var(--accent);border-radius:var(--r2);margin-top:28px;position:relative;overflow:hidden}
+.email-display::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,245,66,0.06),transparent);pointer-events:none}
+.email-icon{font-size:1.8rem;flex-shrink:0}
+.email-label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px}
+.email-value{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--accent);word-break:break-all}
+
+/* Form */
+.form-wrap{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:40px}
+.form-group{margin-bottom:18px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-label{display:block;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--r);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:0.93rem;color:var(--text);outline:none;transition:border-color 0.2s,background 0.2s}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--muted2)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);background:var(--accent-dim2)}
+.form-textarea{resize:vertical;min-height:100px}
+.form-select{appearance:none;cursor:pointer}
+.form-submit{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;padding:17px 30px;border-radius:100px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;letter-spacing:0.04em;background:var(--accent);color:#0B0B0E;cursor:pointer;border:none;transition:all 0.22s ease}
+.form-submit:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,245,66,0.28)}
+.form-success{display:none;text-align:center;padding:28px}
+.form-success.show{display:block}
+.form-success-icon{font-size:3rem;margin-bottom:14px}
+.form-success-title{font-family:'Instrument Serif',serif;font-size:1.6rem;color:var(--success);margin-bottom:8px}
+.form-success-text{font-size:0.9rem;color:var(--muted)}
+
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Local<span>Web</span> Pro</a>
+    <ul class="nav-links">
+      <li><a href="kit-gratuit.html">Kit Gratuit</a></li>
+      <li><a href="templates.html">Templates</a></li>
+      <li><a href="kit-premium.html">Kit Premium</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-pill">
+        <button id="btnDark" class="active" title="Thème sombre">🌙</button>
+        <button id="btnLight" title="Thème clair">☀️</button>
+      </div>
+      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <button class="nav-ham" id="navHam" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMob">
+    <a href="kit-gratuit.html">Kit Gratuit</a>
+    <a href="templates.html">Templates</a>
+    <a href="kit-premium.html">Kit Premium</a>
+    <a href="contact.html">Contact</a>
+    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="container">
+    <div style="max-width:640px" class="fade-in">
+      <span class="label">Contact</span>
+      <h1 class="heading" style="font-size:clamp(2.2rem,5vw,3.6rem)">
+        Parlons de<br/>votre <em>projet.</em>
+      </h1>
+      <p class="sub" style="margin-top:18px">
+        Répondez à quelques questions et je vous réponds sous 24h. Aucun engagement, juste une conversation pour voir si je peux vous aider.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact-section" class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT — Info -->
+      <div class="fade-in">
+        <span class="label">Mes coordonnées</span>
+        <h2 class="heading" style="font-size:clamp(1.6rem,3vw,2.4rem)">
+          Toujours<br/><em>disponible.</em>
+        </h2>
+
+        <!-- Email visible -->
+        <a href="mailto:brittanydreano.cm@gmail.com" class="email-display" style="margin-top:28px">
+          <div class="email-icon">✉️</div>
+          <div>
+            <div class="email-label">E-mail direct</div>
+            <div class="email-value">brittanydreano.cm@gmail.com</div>
+          </div>
+        </a>
+
+        <div class="info-cards" style="margin-top:28px">
+          <div class="info-card">
+            <div class="info-icon">⏱️</div>
+            <div>
+              <div class="info-title">Réponse rapide</div>
+              <div class="info-text">Je réponds à tous les messages sous 24h, souvent dans la journée. Même le week-end.</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🎁</div>
+            <div>
+              <div class="info-title">Audit offert</div>
+              <div class="info-text">Chaque prise de contact inclut un audit de visibilité gratuit (valeur 80€) pour votre activité.</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🛡️</div>
+            <div>
+              <div class="info-title">Zéro pression</div>
+              <div class="info-text">Pas de relance agressive, pas de devis forcé. Juste une vraie conversation sur vos besoins.</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📋</div>
+            <div>
+              <div class="info-title">Besoin d'infos d'abord ?</div>
+              <div class="info-text">Consultez le <a href="kit-gratuit.html">Kit Gratuit</a> ou le <a href="kit-premium.html">Kit Premium</a> pour comprendre l'offre avant de me contacter.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Form -->
+      <div class="fade-in d2">
+        <div class="form-wrap">
+          <form id="contactForm" novalidate>
+            <div id="formFields">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="fPrenom">Prénom</label>
+                  <input class="form-input" type="text" id="fPrenom" placeholder="Jean-Paul" required autocomplete="given-name"/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="fNom">Nom</label>
+                  <input class="form-input" type="text" id="fNom" placeholder="Dupont" autocomplete="family-name"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fEmail">E-mail</label>
+                <input class="form-input" type="email" id="fEmail" placeholder="vous@votreboite.fr" autocomplete="email"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fTel">Téléphone</label>
+                <input class="form-input" type="tel" id="fTel" placeholder="06 12 34 56 78" required autocomplete="tel"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fMetier">Votre activité</label>
+                <select class="form-select" id="fMetier">
+                  <option value="">Sélectionnez votre secteur…</option>
+                  <option>Artisan (plombier, électricien, peintre…)</option>
+                  <option>Freelance (dev, graphiste, consultant…)</option>
+                  <option>Coach / Thérapeute</option>
+                  <option>Restaurant / Commerce local</option>
+                  <option>Petite entreprise (TPE)</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fMsg">Votre projet en quelques mots</label>
+                <textarea class="form-textarea" id="fMsg" placeholder="Je cherche à avoir un site pour attirer plus de clients dans ma région…"></textarea>
+              </div>
+              <button class="form-submit" type="submit">
+                Envoyer ma demande →
+              </button>
+              <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:14px">
+                Ou écrivez directement à<br/>
+                <a href="mailto:brittanydreano.cm@gmail.com" style="color:var(--accent);font-weight:600">brittanydreano.cm@gmail.com</a>
+              </p>
+            </div>
+            <div class="form-success" id="formSuccess">
+              <div class="form-success-icon">✅</div>
+              <h3 class="form-success-title">Message reçu !</h3>
+              <p class="form-success-text">Je vous réponds sous 24h. Gardez un œil sur votre boîte mail.</p>
+              <a href="kit-premium.html" class="btn btn-primary" style="margin-top:24px">Découvrir le Kit Premium →</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Local<span>Web</span> Pro</div>
+        <div class="footer-copy">© 2025 LocalWeb Pro — Tous droits réservés</div>
+      </div>
+      <div class="footer-trust-row">
+        <div class="footer-badge">🔒 Site sécurisé</div>
+        <div class="footer-badge">🇫🇷 Fait en France</div>
+      </div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Accueil</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTTOM NAV MOBILE -->
+<nav id="bottom-nav" aria-label="Navigation principale">
+  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span>Accueil</span></a>
+  <a href="kit-gratuit.html" class="bnav-item"><span class="bnav-icon">🎁</span><span>Gratuit</span></a>
+  <a href="kit-premium.html" class="bnav-item"><span class="bnav-icon">⭐</span><span>Premium</span></a>
+  <a href="templates.html" class="bnav-item"><span class="bnav-icon">🎨</span><span>Templates</span></a>
+  <a href="contact.html" class="bnav-item active"><span class="bnav-icon">✉️</span><span>Contact</span></a>
+</nav>
+
+<script>
+(function(){
+  const h=document.documentElement;
+  const d=document.getElementById('btnDark');
+  const l=document.getElementById('btnLight');
+  const apply=t=>{t==='light'?h.setAttribute('data-theme','light'):h.removeAttribute('data-theme');d.classList.toggle('active',t!=='light');l.classList.toggle('active',t==='light');localStorage.setItem('lwp-t',t)};
+  apply(localStorage.getItem('lwp-t')||'dark');
+  d.onclick=()=>apply('dark');l.onclick=()=>apply('light');
+})();
+const ham=document.getElementById('navHam'),mob=document.getElementById('navMob');
+ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.classList.toggle('open',o)});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');ham.classList.remove('open')}));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20),{passive:true});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const prenom=document.getElementById('fPrenom').value.trim();
+  const tel=document.getElementById('fTel').value.trim();
+  if(!prenom||!tel){
+    if(!prenom){const el=document.getElementById('fPrenom');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
+    if(!tel){const el=document.getElementById('fTel');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
+    return;
+  }
+  const btn=this.querySelector('.form-submit');
+  btn.textContent='Envoi en cours…';btn.disabled=true;
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/brittanydreano.cm@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:`✉️ Nouveau contact — ${prenom}`,
+        Prénom:prenom,Nom:document.getElementById('fNom').value,
+        Email:document.getElementById('fEmail').value,
+        Téléphone:tel,
+        Secteur:document.getElementById('fMetier').value,
+        Message:document.getElementById('fMsg').value,
+        _template:'table'
+      })
+    });
+    if(res.ok){
+      document.getElementById('formFields').style.display='none';
+      document.getElementById('formSuccess').classList.add('show');
+    }else throw new Error();
+  }catch{
+    btn.textContent='❌ Erreur — réessayez';btn.disabled=false;
+    setTimeout(()=>{btn.textContent='Envoyer ma demande →';},3000);
+  }
+});
+</script>
+</body>
+</html>
