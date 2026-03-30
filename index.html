@@ -763,6 +763,25 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
   #sticky-cta{bottom:68px}
   body{padding-bottom:68px}
 }
+
+/* === HERO CAROUSEL === */
+.hero-carousel { position:relative; border-radius:var(--r2); overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,0.6); aspect-ratio:4/3; }
+.hero-carousel img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.7s ease; }
+.hero-carousel img.active { opacity:1; }
+.carousel-dots { position:absolute; bottom:14px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:2; }
+.carousel-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:background 0.3s; }
+.carousel-dot.active { background:var(--accent); }
+
+/* === QUESTIONNAIRE QUIZ === */
+.qp-step { flex:1; height:4px; border-radius:2px; background:var(--border2); transition:background 0.3s; }
+.qp-step.active { background:var(--accent); }
+.quiz-opt {
+  background:var(--bg3); border:1.5px solid var(--border2);
+  border-radius:var(--r); padding:16px 14px; font-family:'Syne',sans-serif;
+  font-size:0.88rem; font-weight:700; color:var(--text); text-align:left;
+  cursor:pointer; transition:all 0.2s;
+}
+.quiz-opt:hover, .quiz-opt.selected { border-color:var(--accent); background:var(--accent-dim); color:var(--accent); }
 </style>
 </head>
 <body>
@@ -782,7 +801,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     <div class="sticky-price">Site complet — 600€ <span>800€</span></div>
     <div style="font-size:0.72rem;color:var(--muted)">Livraison en 7 jours · 3 places restantes</div>
   </div>
-  <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:12px 22px;font-size:0.82rem">Je commence →</a>
+  <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary" style="padding:12px 22px;font-size:0.82rem">Je commence →</a>
 </div>
 
 <!-- ============================
@@ -802,7 +821,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
         <button id="btnDark" class="active" title="Thème sombre">🌙</button>
         <button id="btnLight" title="Thème clair">☀️</button>
       </div>
-      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
       <button class="nav-ham" id="navHam" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -813,7 +832,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     <a href="templates.html">Templates</a>
     <a href="kit-premium.html">Kit Premium</a>
     <a href="contact.html">Contact</a>
-    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+    <a href="mailto:ptiorkin@hotmail.fr">Démarrer mon projet →</a>
   </div>
 </nav>
 
@@ -839,7 +858,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
           Je crée des sites modernes, rapides et optimisés pour transformer vos visiteurs en clients. Indépendants, freelances, petites entreprises — résultats en 7 jours.
         </p>
         <div class="hero-actions fade-in d3">
-          <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-lg">
+          <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary btn-lg">
             Lancer mon site en 7 jours
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -852,27 +871,13 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
         </div>
       </div>
       <div class="hero-visual fade-in d2">
-        <div class="browser-wrap">
-          <div class="browser">
-            <div class="browser-bar">
-              <div class="browser-dots">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="browser-url">votresite.fr</div>
-            </div>
-            <div class="browser-body">
-              <div class="mock-hero-bar"></div>
-              <div class="mock-line w60"></div>
-              <div class="mock-line w40"></div>
-              <div class="mock-btn"></div>
-              <div class="mock-img"></div>
-              <div class="mock-stats">
-                <div class="mock-stat"><div class="mock-stat-val" id="hc1">0</div><div class="mock-stat-lbl">appels/sem.</div></div>
-                <div class="mock-stat"><div class="mock-stat-val" id="hc2">0</div><div class="mock-stat-lbl">devis/mois</div></div>
-                <div class="mock-stat"><div class="mock-stat-val" id="hc3">0%</div><div class="mock-stat-lbl">visibilité</div></div>
-              </div>
-              <div class="mock-line w80" style="margin-top:4px"></div>
-              <div class="mock-line w70"></div>
+        <div style="position:relative;">
+          <div class="hero-carousel">
+            <img src="images/projet-nexus.png" alt="Projet client 1 — Blog Nexus" class="active"/>
+            <img src="images/projet-brittassit.png" alt="Projet client 2 — Brittassit"/>
+            <div class="carousel-dots">
+              <div class="carousel-dot active"></div>
+              <div class="carousel-dot"></div>
             </div>
           </div>
           <div class="browser-floating">
@@ -1042,7 +1047,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
           <div class="roi-result-val" id="rResult">2 clients</div>
           <div class="roi-result-sub" id="rSub">soit environ 4–6 semaines après mise en ligne</div>
         </div>
-        <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px">
+        <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px">
           Je veux ce ROI →
         </a>
       </div>
@@ -1086,7 +1091,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
           <li class="offre-feat"><span class="feat-check">✅</span> Révisions illimitées jusqu'à satisfaction</li>
         </ul>
         <div class="offre-cta">
-          <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+          <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
             Je commence maintenant →
           </a>
         </div>
@@ -1107,7 +1112,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
           <li class="offre-feat"><span class="feat-check">✅</span> Sans engagement — résiliable à tout moment</li>
         </ul>
         <div class="offre-cta">
-          <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-ghost btn-lg" style="width:100%;justify-content:center">
+          <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-ghost btn-lg" style="width:100%;justify-content:center">
             Me renseigner →
           </a>
         </div>
@@ -1129,43 +1134,27 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     <div class="real-grid">
       <!-- Réalisation 1 -->
       <div class="real-card fade-in d1">
-        <div class="real-screen">
-          <div class="real-mini-bar" style="background:#C9F542"></div>
-          <div class="real-mini-hero" style="background:linear-gradient(135deg,#1C1C26,#2a2a38)"></div>
-          <div class="real-mini-grid">
-            <div class="real-mini-box"></div>
-            <div class="real-mini-box"></div>
-          </div>
-          <div class="real-mini-btn" style="background:#C9F542;margin-bottom:14px"></div>
+        <div style="height:200px;overflow:hidden;">
+          <img src="images/projet-nexus.png" alt="Projet Blog Nexus" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
         </div>
         <div class="real-info">
-          <div class="real-sector">Artisan — Plomberie</div>
-          <div class="real-name">Plomberie Dupont</div>
-          <div class="real-kpi">Résultat : <strong>+14 appels/semaine</strong></div>
+          <div class="real-sector">Média — Blog finance</div>
+          <div class="real-name">Nexus</div>
+          <div class="real-kpi">Résultat : <strong>+12 000 lecteurs/mois</strong></div>
         </div>
-        <div class="real-overlay">
-          <div class="real-overlay-text">Voir le détail →</div>
-        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Voir le détail →</div></div>
       </div>
       <!-- Réalisation 2 -->
       <div class="real-card fade-in d2">
-        <div class="real-screen">
-          <div class="real-mini-bar" style="background:#4DF0A0"></div>
-          <div class="real-mini-hero" style="background:linear-gradient(135deg,#0d1f16,#1a3826)"></div>
-          <div class="real-mini-grid">
-            <div class="real-mini-box" style="background:#0d1f16"></div>
-            <div class="real-mini-box" style="background:#0d1f16"></div>
-          </div>
-          <div class="real-mini-btn" style="background:#4DF0A0;margin-bottom:14px"></div>
+        <div style="height:200px;overflow:hidden;">
+          <img src="images/projet-brittassit.png" alt="Projet Brittassit — Assistante digitale" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
         </div>
         <div class="real-info">
-          <div class="real-sector">Coach — Bien-être</div>
-          <div class="real-name">Clara Coaching</div>
-          <div class="real-kpi">Résultat : <strong>+8 demandes/mois</strong></div>
+          <div class="real-sector">Services — Assistante digitale</div>
+          <div class="real-name">Brittassit</div>
+          <div class="real-kpi">Résultat : <strong>+8 réservations/mois</strong></div>
         </div>
-        <div class="real-overlay">
-          <div class="real-overlay-text">Voir le détail →</div>
-        </div>
+        <div class="real-overlay"><div class="real-overlay-text">Voir le détail →</div></div>
       </div>
       <!-- Réalisation 3 -->
       <div class="real-card fade-in d3">
@@ -1371,6 +1360,88 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
 ============================ -->
 <section id="contact" class="section">
   <div class="container">
+
+    <!-- QUESTIONNAIRE MULTI-ÉTAPES -->
+    <div class="quiz-wrap fade-in" style="max-width:680px;margin:0 auto 64px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:40px;">
+      <div class="quiz-progress" style="display:flex;gap:6px;margin-bottom:28px;">
+        <div class="qp-step active" data-step="1"></div>
+        <div class="qp-step" data-step="2"></div>
+        <div class="qp-step" data-step="3"></div>
+      </div>
+
+      <!-- Étape 1 : type de projet -->
+      <div class="quiz-step" id="qs1">
+        <span class="label">Étape 1 / 3</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;margin-bottom:20px;">Quel type de site vous faut-il ?</h3>
+        <div class="quiz-options" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <button class="quiz-opt" data-val="Vitrine 1 page">🏠 Site vitrine 1 page</button>
+          <button class="quiz-opt" data-val="Multi-pages">📄 Site multi-pages</button>
+          <button class="quiz-opt" data-val="E-commerce">🛒 Boutique en ligne</button>
+          <button class="quiz-opt" data-val="Je ne sais pas">🤔 Je ne sais pas encore</button>
+        </div>
+      </div>
+
+      <!-- Étape 2 : budget et délai -->
+      <div class="quiz-step" id="qs2" style="display:none;">
+        <span class="label">Étape 2 / 3</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;margin-bottom:20px;">Quel est votre budget et délai ?</h3>
+        <div style="margin-bottom:18px;">
+          <label class="form-label">Budget envisagé</label>
+          <select class="form-select" id="qBudget">
+            <option value="">Sélectionnez…</option>
+            <option>Moins de 500€</option>
+            <option>500€ – 800€</option>
+            <option>800€ – 1 500€</option>
+            <option>Plus de 1 500€</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label">Délai souhaité</label>
+          <select class="form-select" id="qDelai">
+            <option value="">Sélectionnez…</option>
+            <option>Le plus tôt possible</option>
+            <option>Dans le mois</option>
+            <option>Dans 2 à 3 mois</option>
+            <option>Pas de contrainte</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" style="margin-top:22px;" id="qNext2">Suivant →</button>
+      </div>
+
+      <!-- Étape 3 : coordonnées -->
+      <div class="quiz-step" id="qs3" style="display:none;">
+        <span class="label">Étape 3 / 3</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;margin-bottom:20px;">Vos coordonnées pour vous recontacter</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Prénom *</label>
+            <input class="form-input" type="text" id="qPrenom" placeholder="Jean" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Téléphone *</label>
+            <input class="form-input" type="tel" id="qTel" placeholder="06 12 34 56 78" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" id="qEmail" placeholder="jean@exemple.fr"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Décrivez votre activité en quelques mots</label>
+          <textarea class="form-textarea" id="qDesc" placeholder="Ex : Je suis plombier à Nantes, je veux attirer plus de clients locaux…"></textarea>
+        </div>
+        <button class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" id="qSubmit">Envoyer ma demande →</button>
+      </div>
+
+      <!-- Succès -->
+      <div class="quiz-step" id="qsDone" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:3rem;margin-bottom:14px;">✅</div>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:1.6rem;color:var(--success);margin-bottom:8px;">Demande envoyée !</h3>
+        <p style="color:var(--muted);">Je vous recontacte sous 24h avec une proposition adaptée à votre projet.</p>
+      </div>
+    </div>
+
     <div class="contact-grid">
       <div class="contact-left fade-in">
         <span class="label">Contact</span>
@@ -1385,21 +1456,25 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
       </div>
       <div class="fade-in d2">
         <div class="form-wrap">
-          <form id="contactForm" novalidate>
+          <form id="contactForm" action="https://formsubmit.co/ptiorkin@hotmail.fr" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="🚀 Nouvelle demande LocalWeb Pro"/>
+            <input type="hidden" name="_captcha" value="false"/>
+            <input type="hidden" name="_template" value="table"/>
+            <input type="hidden" name="_next" value="https://localwebpro.fr/index.html?sent=1"/>
             <div id="formFields">
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="fPrenom">Prénom</label>
-                  <input class="form-input" type="text" id="fPrenom" placeholder="Jean-Paul" required autocomplete="given-name"/>
+                  <input class="form-input" type="text" id="fPrenom" name="Prénom" placeholder="Jean-Paul" required autocomplete="given-name"/>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="fNom">Nom</label>
-                  <input class="form-input" type="text" id="fNom" placeholder="Dupont"/>
+                  <input class="form-input" type="text" id="fNom" name="Nom" placeholder="Dupont"/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="fMetier">Votre activité</label>
-                <select class="form-select" id="fMetier">
+                <select class="form-select" id="fMetier" name="Activité">
                   <option value="">Sélectionnez votre secteur…</option>
                   <option>Artisan (plombier, électricien, peintre…)</option>
                   <option>Freelance (dev, graphiste, consultant…)</option>
@@ -1411,14 +1486,14 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
               </div>
               <div class="form-group">
                 <label class="form-label" for="fTel">Téléphone</label>
-                <input class="form-input" type="tel" id="fTel" placeholder="06 12 34 56 78" required autocomplete="tel"/>
+                <input class="form-input" type="tel" id="fTel" name="Téléphone" placeholder="06 12 34 56 78" required autocomplete="tel"/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="fMsg">Un mot sur votre projet (optionnel)</label>
-                <textarea class="form-textarea" id="fMsg" placeholder="Je cherche à augmenter mes demandes, je n'ai pas de site actuellement…"></textarea>
+                <textarea class="form-textarea" id="fMsg" name="Message" placeholder="Je cherche à augmenter mes demandes, je n'ai pas de site actuellement…"></textarea>
               </div>
               <div class="form-check-wrap">
-                <input class="form-check" type="checkbox" id="fPromo"/>
+                <input class="form-check" type="checkbox" id="fPromo" name="Offre 600€" value="Oui ✅"/>
                 <label class="form-check-lbl" for="fPromo">
                   Je veux profiter de <strong>l'offre lancement à 600€</strong> (places limitées)
                 </label>
@@ -1585,41 +1660,21 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 });
 
 /* === FORM === */
-document.getElementById('contactForm').addEventListener('submit',async function(e){
-  e.preventDefault();
+if(new URLSearchParams(location.search).get('sent')==='1'){
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formSuccess').classList.add('show');
+}
+document.getElementById('contactForm').addEventListener('submit',function(e){
   const prenom=document.getElementById('fPrenom').value.trim();
   const tel=document.getElementById('fTel').value.trim();
   if(!prenom||!tel){
+    e.preventDefault();
     [['fPrenom',prenom],['fTel',tel]].forEach(([id,v])=>{
       if(!v){const el=document.getElementById(id);el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true});}
     });
     return;
   }
-  const btn=this.querySelector('.form-submit');
-  btn.textContent='Envoi en cours…';btn.disabled=true;
-  try{
-    const res=await fetch('https://formsubmit.co/ajax/brittanydreano.cm@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        _subject:`🚀 Nouvelle demande — ${prenom}`,
-        Prénom:prenom,
-        Nom:document.getElementById('fNom').value,
-        Secteur:document.getElementById('fMetier').value,
-        Téléphone:tel,
-        Message:document.getElementById('fMsg').value,
-        'Offre 600€':document.getElementById('fPromo').checked?'Oui ✅':'Non',
-        _template:'table'
-      })
-    });
-    if(res.ok){
-      document.getElementById('formFields').style.display='none';
-      document.getElementById('formSuccess').classList.add('show');
-    }else throw new Error();
-  }catch{
-    btn.textContent='❌ Erreur — réessayez';btn.disabled=false;
-    setTimeout(()=>{btn.textContent='Je veux être rappelé sous 24h →';},3000);
-  }
+  this.querySelector('.form-submit').textContent='Envoi en cours…';
 });
 
 /* === TOAST SOCIAL PROOF === */
@@ -1648,6 +1703,75 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
+
+/* === HERO CAROUSEL === */
+(function(){
+  const imgs = document.querySelectorAll('.hero-carousel img');
+  const dots = document.querySelectorAll('.carousel-dot');
+  let cur = 0;
+  function go(n){
+    imgs[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = (n + imgs.length) % imgs.length;
+    imgs[cur].classList.add('active'); dots[cur].classList.add('active');
+  }
+  dots.forEach((d,i) => d.addEventListener('click', () => go(i)));
+  setInterval(() => go(cur + 1), 4000);
+})();
+
+/* === QUESTIONNAIRE QUIZ === */
+(function(){
+  let quizData = {};
+  // Étape 1 — choix type
+  document.querySelectorAll('.quiz-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      quizData.type = btn.dataset.val;
+      setTimeout(() => {
+        document.getElementById('qs1').style.display = 'none';
+        document.getElementById('qs2').style.display = 'block';
+        document.querySelector('[data-step="2"]').classList.add('active');
+      }, 400);
+    });
+  });
+  // Étape 2 — budget/délai
+  document.getElementById('qNext2').addEventListener('click', () => {
+    quizData.budget = document.getElementById('qBudget').value;
+    quizData.delai = document.getElementById('qDelai').value;
+    document.getElementById('qs2').style.display = 'none';
+    document.getElementById('qs3').style.display = 'block';
+    document.querySelector('[data-step="3"]').classList.add('active');
+  });
+  // Étape 3 — envoi
+  document.getElementById('qSubmit').addEventListener('click', async () => {
+    const prenom = document.getElementById('qPrenom').value.trim();
+    const tel = document.getElementById('qTel').value.trim();
+    if(!prenom || !tel) { alert('Merci de renseigner votre prénom et téléphone.'); return; }
+    quizData.prenom = prenom;
+    quizData.tel = tel;
+    quizData.email = document.getElementById('qEmail').value;
+    quizData.desc = document.getElementById('qDesc').value;
+    const btn = document.getElementById('qSubmit');
+    btn.textContent = 'Envoi…'; btn.disabled = true;
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/ptiorkin@hotmail.fr', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          _subject: `📋 Nouveau questionnaire client — ${prenom}`,
+          Prénom: prenom, Téléphone: tel, Email: quizData.email,
+          'Type de site': quizData.type, Budget: quizData.budget,
+          Délai: quizData.delai, Description: quizData.desc,
+          _template: 'table'
+        })
+      });
+      if(res.ok){
+        document.getElementById('qs3').style.display='none';
+        document.getElementById('qsDone').style.display='block';
+      } else throw new Error();
+    } catch { btn.textContent='❌ Erreur — réessayez'; btn.disabled=false; }
+  });
+})();
 
 /* === MENTIONS MODAL === */
 const ov=document.getElementById('mentionsOverlay');

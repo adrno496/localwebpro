@@ -182,7 +182,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
         <button id="btnDark" class="active" title="Thème sombre">🌙</button>
         <button id="btnLight" title="Thème clair">☀️</button>
       </div>
-      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
       <button class="nav-ham" id="navHam" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -191,7 +191,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     <a href="templates.html">Templates</a>
     <a href="kit-premium.html">Kit Premium</a>
     <a href="contact.html">Contact</a>
-    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+    <a href="mailto:ptiorkin@hotmail.fr">Démarrer mon projet →</a>
   </div>
 </nav>
 
@@ -294,41 +294,47 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     </div>
     <div class="form-inner fade-in d1">
       <div class="form-wrap">
-        <div id="kitFormFields">
-          <div class="form-group">
-            <label class="form-label" for="kPrenom">Votre prénom</label>
-            <input class="form-input" type="text" id="kPrenom" placeholder="Jean-Paul" required autocomplete="given-name"/>
+        <form id="kitForm" action="https://formsubmit.co/ptiorkin@hotmail.fr" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="🎁 Kit Gratuit demandé"/>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_template" value="table"/>
+          <input type="hidden" name="_next" value="https://localwebpro.fr/kit-gratuit.html?sent=1"/>
+          <div id="kitFormFields">
+            <div class="form-group">
+              <label class="form-label" for="kPrenom">Votre prénom</label>
+              <input class="form-input" type="text" id="kPrenom" name="Prénom" placeholder="Jean-Paul" required autocomplete="given-name"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="kEmail">Votre e-mail</label>
+              <input class="form-input" type="email" id="kEmail" name="Email" placeholder="jean-paul@monentreprise.fr" required autocomplete="email"/>
+              <div class="form-hint">🔒 Aucun spam. Désabonnement en 1 clic.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="kMetier">Votre activité</label>
+              <select class="form-select" id="kMetier" name="Activité">
+                <option value="">Sélectionnez votre secteur…</option>
+                <option>Artisan (plombier, électricien, peintre…)</option>
+                <option>Freelance (dev, graphiste, consultant…)</option>
+                <option>Coach / Thérapeute</option>
+                <option>Restaurant / Commerce local</option>
+                <option>Petite entreprise (TPE)</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-lg btn-full" id="kitSubmit" type="submit">
+              Envoyer mon kit gratuit →
+            </button>
+            <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:14px">
+              Ou écrivez directement à <a href="mailto:ptiorkin@hotmail.fr" style="color:var(--accent)">ptiorkin@hotmail.fr</a>
+            </p>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="kEmail">Votre e-mail</label>
-            <input class="form-input" type="email" id="kEmail" placeholder="jean-paul@monentreprise.fr" required autocomplete="email"/>
-            <div class="form-hint">🔒 Aucun spam. Désabonnement en 1 clic.</div>
+          <div class="form-success-box" id="kitSuccess">
+            <div class="icon">🎉</div>
+            <h3>C'est envoyé !</h3>
+            <p>Vérifiez votre boîte mail dans les 5 prochaines minutes. Si vous ne voyez rien, vérifiez les spams.</p>
+            <a href="kit-premium.html" class="btn btn-primary btn-lg" style="margin-top:24px">Découvrir le Kit Premium →</a>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="kMetier">Votre activité</label>
-            <select class="form-select" id="kMetier">
-              <option value="">Sélectionnez votre secteur…</option>
-              <option>Artisan (plombier, électricien, peintre…)</option>
-              <option>Freelance (dev, graphiste, consultant…)</option>
-              <option>Coach / Thérapeute</option>
-              <option>Restaurant / Commerce local</option>
-              <option>Petite entreprise (TPE)</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <button class="btn btn-primary btn-lg btn-full" id="kitSubmit" type="button">
-            Envoyer mon kit gratuit →
-          </button>
-          <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:14px">
-            Ou écrivez directement à <a href="mailto:brittanydreano.cm@gmail.com" style="color:var(--accent)">brittanydreano.cm@gmail.com</a>
-          </p>
-        </div>
-        <div class="form-success-box" id="kitSuccess">
-          <div class="icon">🎉</div>
-          <h3>C'est envoyé !</h3>
-          <p>Vérifiez votre boîte mail dans les 5 prochaines minutes. Si vous ne voyez rien, vérifiez les spams.</p>
-          <a href="kit-premium.html" class="btn btn-primary btn-lg" style="margin-top:24px">Découvrir le Kit Premium →</a>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -341,7 +347,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     <p class="cta-sub fade-in d1">Le Kit Gratuit pose les bases. Le Kit Premium vous amène des clients. Découvrez la différence.</p>
     <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap" class="fade-in d2">
       <a href="kit-premium.html" class="btn btn-dark btn-lg">Voir le Kit Premium →</a>
-      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-ghost btn-lg" style="border-color:rgba(11,11,14,0.3);color:#0B0B0E">Poser une question</a>
+      <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-ghost btn-lg" style="border-color:rgba(11,11,14,0.3);color:#0B0B0E">Poser une question</a>
     </div>
   </div>
 </section>
@@ -424,32 +430,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 });
 
 /* FORM */
-document.getElementById('kitSubmit').addEventListener('click',async function(){
+if(new URLSearchParams(location.search).get('sent')==='1'){
+  document.getElementById('kitFormFields').style.display='none';
+  document.getElementById('kitSuccess').classList.add('show');
+}
+document.getElementById('kitForm').addEventListener('submit',function(e){
   const prenom=document.getElementById('kPrenom').value.trim();
   const email=document.getElementById('kEmail').value.trim();
   if(!prenom||!email){
+    e.preventDefault();
     if(!prenom){const el=document.getElementById('kPrenom');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
     if(!email){const el=document.getElementById('kEmail');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
     return;
   }
-  this.textContent='Envoi en cours…';this.disabled=true;
-  try{
-    await fetch('https://formsubmit.co/ajax/brittanydreano.cm@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        _subject:`🎁 Kit Gratuit demandé — ${prenom}`,
-        Prénom:prenom,Email:email,
-        Secteur:document.getElementById('kMetier').value,
-        _template:'table'
-      })
-    });
-    document.getElementById('kitFormFields').style.display='none';
-    document.getElementById('kitSuccess').classList.add('show');
-  }catch{
-    this.textContent='❌ Erreur — réessayez';this.disabled=false;
-    setTimeout(()=>{this.textContent='Envoyer mon kit gratuit →';},3000);
-  }
+  document.getElementById('kitSubmit').textContent='Envoi en cours…';
 });
 </script>
 </body>

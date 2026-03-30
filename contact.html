@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Contact — LocalWeb Pro</title>
-<meta name="description" content="Contactez LocalWeb Pro pour démarrer votre projet web. Réponse garantie sous 24h. Email : brittanydreano.cm@gmail.com"/>
+<meta name="description" content="Contactez LocalWeb Pro pour démarrer votre projet web. Réponse garantie sous 24h. Email : ptiorkin@hotmail.fr"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -168,7 +168,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
         <button id="btnDark" class="active" title="Thème sombre">🌙</button>
         <button id="btnLight" title="Thème clair">☀️</button>
       </div>
-      <a href="mailto:brittanydreano.cm@gmail.com" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
+      <a href="mailto:ptiorkin@hotmail.fr" class="btn btn-primary" style="padding:9px 20px;font-size:0.82rem">Démarrer →</a>
       <button class="nav-ham" id="navHam" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -177,7 +177,7 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
     <a href="templates.html">Templates</a>
     <a href="kit-premium.html">Kit Premium</a>
     <a href="contact.html">Contact</a>
-    <a href="mailto:brittanydreano.cm@gmail.com">Démarrer mon projet →</a>
+    <a href="mailto:ptiorkin@hotmail.fr">Démarrer mon projet →</a>
   </div>
 </nav>
 
@@ -210,11 +210,11 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
         </h2>
 
         <!-- Email visible -->
-        <a href="mailto:brittanydreano.cm@gmail.com" class="email-display" style="margin-top:28px">
+        <a href="mailto:ptiorkin@hotmail.fr" class="email-display" style="margin-top:28px">
           <div class="email-icon">✉️</div>
           <div>
             <div class="email-label">E-mail direct</div>
-            <div class="email-value">brittanydreano.cm@gmail.com</div>
+            <div class="email-value">ptiorkin@hotmail.fr</div>
           </div>
         </a>
 
@@ -253,29 +253,33 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
       <!-- RIGHT — Form -->
       <div class="fade-in d2">
         <div class="form-wrap">
-          <form id="contactForm" novalidate>
+          <form id="contactForm" action="https://formsubmit.co/ptiorkin@hotmail.fr" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="✉️ Nouveau contact LocalWeb Pro"/>
+            <input type="hidden" name="_captcha" value="false"/>
+            <input type="hidden" name="_template" value="table"/>
+            <input type="hidden" name="_next" value="https://localwebpro.fr/contact.html?sent=1"/>
             <div id="formFields">
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="fPrenom">Prénom</label>
-                  <input class="form-input" type="text" id="fPrenom" placeholder="Jean-Paul" required autocomplete="given-name"/>
+                  <input class="form-input" type="text" id="fPrenom" name="Prénom" placeholder="Jean-Paul" required autocomplete="given-name"/>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="fNom">Nom</label>
-                  <input class="form-input" type="text" id="fNom" placeholder="Dupont" autocomplete="family-name"/>
+                  <input class="form-input" type="text" id="fNom" name="Nom" placeholder="Dupont" autocomplete="family-name"/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="fEmail">E-mail</label>
-                <input class="form-input" type="email" id="fEmail" placeholder="vous@votreboite.fr" autocomplete="email"/>
+                <input class="form-input" type="email" id="fEmail" name="Email" placeholder="vous@votreboite.fr" autocomplete="email"/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="fTel">Téléphone</label>
-                <input class="form-input" type="tel" id="fTel" placeholder="06 12 34 56 78" required autocomplete="tel"/>
+                <input class="form-input" type="tel" id="fTel" name="Téléphone" placeholder="06 12 34 56 78" required autocomplete="tel"/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="fMetier">Votre activité</label>
-                <select class="form-select" id="fMetier">
+                <select class="form-select" id="fMetier" name="Activité">
                   <option value="">Sélectionnez votre secteur…</option>
                   <option>Artisan (plombier, électricien, peintre…)</option>
                   <option>Freelance (dev, graphiste, consultant…)</option>
@@ -287,14 +291,14 @@ footer{background:#080809;border-top:1px solid var(--border);padding:36px 0}
               </div>
               <div class="form-group">
                 <label class="form-label" for="fMsg">Votre projet en quelques mots</label>
-                <textarea class="form-textarea" id="fMsg" placeholder="Je cherche à avoir un site pour attirer plus de clients dans ma région…"></textarea>
+                <textarea class="form-textarea" id="fMsg" name="Message" placeholder="Je cherche à avoir un site pour attirer plus de clients dans ma région…"></textarea>
               </div>
               <button class="form-submit" type="submit">
                 Envoyer ma demande →
               </button>
               <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:14px">
                 Ou écrivez directement à<br/>
-                <a href="mailto:brittanydreano.cm@gmail.com" style="color:var(--accent);font-weight:600">brittanydreano.cm@gmail.com</a>
+                <a href="mailto:ptiorkin@hotmail.fr" style="color:var(--accent);font-weight:600">ptiorkin@hotmail.fr</a>
               </p>
             </div>
             <div class="form-success" id="formSuccess">
@@ -356,39 +360,20 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
 
-document.getElementById('contactForm').addEventListener('submit',async function(e){
-  e.preventDefault();
+if(new URLSearchParams(location.search).get('sent')==='1'){
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formSuccess').classList.add('show');
+}
+document.getElementById('contactForm').addEventListener('submit',function(e){
   const prenom=document.getElementById('fPrenom').value.trim();
   const tel=document.getElementById('fTel').value.trim();
   if(!prenom||!tel){
+    e.preventDefault();
     if(!prenom){const el=document.getElementById('fPrenom');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
     if(!tel){const el=document.getElementById('fTel');el.style.borderColor='#F04D6A';el.addEventListener('input',()=>el.style.borderColor='',{once:true})}
     return;
   }
-  const btn=this.querySelector('.form-submit');
-  btn.textContent='Envoi en cours…';btn.disabled=true;
-  try{
-    const res=await fetch('https://formsubmit.co/ajax/brittanydreano.cm@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        _subject:`✉️ Nouveau contact — ${prenom}`,
-        Prénom:prenom,Nom:document.getElementById('fNom').value,
-        Email:document.getElementById('fEmail').value,
-        Téléphone:tel,
-        Secteur:document.getElementById('fMetier').value,
-        Message:document.getElementById('fMsg').value,
-        _template:'table'
-      })
-    });
-    if(res.ok){
-      document.getElementById('formFields').style.display='none';
-      document.getElementById('formSuccess').classList.add('show');
-    }else throw new Error();
-  }catch{
-    btn.textContent='❌ Erreur — réessayez';btn.disabled=false;
-    setTimeout(()=>{btn.textContent='Envoyer ma demande →';},3000);
-  }
+  this.querySelector('.form-submit').textContent='Envoi en cours…';
 });
 </script>
 </body>
